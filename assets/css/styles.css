@@ -1,0 +1,37 @@
+/* Variables */
+/* Body */
+body {
+    background-color: white;
+    font-family: "Questrial", sans-serif;
+}
+
+/* Main menu */
+#mainmenu {
+    background-color: #F7E7FB;
+    box-shadow: 0 8px 6px -6px rgba(215, 215, 215, 0.68);
+}
+
+#line {
+    background-color: #E0C2F2;
+}
+
+/* Footer */
+#aboutusfooter {
+    background-color: #F7E7FB;
+    padding-top: 1em;
+}
+
+#creditsfooter {
+    background-color: #E0C2F2;
+}
+
+#flinks {
+    text-decoration: none;
+    color: #565158;
+}
+
+a:hover#flinks {
+    color: #312E32;
+}
+
+/*# sourceMappingURL=styles.css.map */

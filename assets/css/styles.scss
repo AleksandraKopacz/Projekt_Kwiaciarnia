@@ -1,0 +1,44 @@
+/* Variables */
+$bgcolor: white;
+$tangopink: #EA7186;
+$oyellow: #F2C76E;
+$toolbox: #7A77B9;
+$lavender: #F7E7FB;
+$quartz: #E0C2F2;
+$text: #565158;
+$texthover: #312E32;
+
+/* Body */
+body {
+  background-color: $bgcolor;
+  font-family: 'Questrial', sans-serif;
+}
+
+/* Main menu */
+#mainmenu {
+  background-color: $lavender;
+  box-shadow: 0 8px 6px -6px rgba(215, 215, 215, 0.68);
+}
+
+#line {
+  background-color: $quartz;
+}
+
+/* Footer */
+#aboutusfooter {
+  background-color: $lavender;
+  padding-top: 1em;
+}
+
+#creditsfooter {
+  background-color: $quartz;
+}
+
+#flinks {
+  text-decoration: none;
+  color: $text;
+}
+
+a:hover#flinks {
+  color: $texthover;
+}
