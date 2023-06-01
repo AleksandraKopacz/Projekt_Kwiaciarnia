@@ -36,14 +36,14 @@ class Smarty_Internal_Method_Literals
     /**
      * Add literals
      *
+     * @api Smarty::addLiterals()
+     *
      * @param \Smarty_Internal_TemplateBase|\Smarty_Internal_Template|\Smarty $obj
      * @param array|string $literals literal or list of literals
      *                                                                                  to addto add
      *
      * @return \Smarty|\Smarty_Internal_Template
      * @throws \SmartyException
-     * @api Smarty::addLiterals()
-     *
      */
     public function addLiterals(Smarty_Internal_TemplateBase $obj, $literals = null)
     {
@@ -56,14 +56,14 @@ class Smarty_Internal_Method_Literals
     /**
      * Set literals
      *
+     * @api Smarty::setLiterals()
+     *
      * @param \Smarty_Internal_TemplateBase|\Smarty_Internal_Template|\Smarty $obj
      * @param array|string $literals literal or list of literals
      *                                                                                  to setto set
      *
      * @return \Smarty|\Smarty_Internal_Template
      * @throws \SmartyException
-     * @api Smarty::setLiterals()
-     *
      */
     public function setLiterals(Smarty_Internal_TemplateBase $obj, $literals = null)
     {

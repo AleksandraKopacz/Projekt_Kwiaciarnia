@@ -181,14 +181,14 @@ abstract class Smarty_Internal_Data
     /**
      * Returns a single or all template variables
      *
+     * @api  Smarty::getTemplateVars()
+     * @link https://www.smarty.net/docs/en/api.get.template.vars.tpl
+     *
      * @param string $varName variable name or null
      * @param \Smarty_Internal_Data|\Smarty_Internal_Template|\Smarty $_ptr optional pointer to data object
      * @param bool $searchParents include parent templates?
      *
      * @return mixed variable value or or array of variables
-     * @api  Smarty::getTemplateVars()
-     * @link https://www.smarty.net/docs/en/api.get.template.vars.tpl
-     *
      */
     public function getTemplateVars($varName = null, Smarty_Internal_Data $_ptr = null, $searchParents = true)
     {

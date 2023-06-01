@@ -51,14 +51,14 @@ class Raw
  * @method bool has(string $table, array $where)
  * @method mixed rand(string $table, array|string $column, array $where)
  * @method int count(string $table, array $where)
- * @method string max(string $table, string $column)
- * @method string min(string $table, string $column)
- * @method string avg(string $table, string $column)
- * @method string sum(string $table, string $column)
- * @method string max(string $table, string $column, array $where)
- * @method string min(string $table, string $column, array $where)
- * @method string avg(string $table, string $column, array $where)
- * @method string sum(string $table, string $column, array $where)
+ * @method int max(string $table, string $column)
+ * @method int min(string $table, string $column)
+ * @method int avg(string $table, string $column)
+ * @method int sum(string $table, string $column)
+ * @method int max(string $table, string $column, array $where)
+ * @method int min(string $table, string $column, array $where)
+ * @method int avg(string $table, string $column, array $where)
+ * @method int sum(string $table, string $column, array $where)
  */
 class Medoo
 {
@@ -440,8 +440,8 @@ class Medoo
         ) {
             $commands[] = "SET NAMES '{$options['charset']}'" . (
                 $this->type === 'mysql' && isset($options['collation']) ?
-                    " COLLATE '{$options['collation']}'" : ''
-                );
+                " COLLATE '{$options['collation']}'" : ''
+            );
         }
 
         $this->dsn = $dsn;
@@ -462,8 +462,8 @@ class Medoo
                         PDO::ERRMODE_WARNING,
                         PDO::ERRMODE_EXCEPTION
                     ]) ?
-                        $options['error'] :
-                        PDO::ERRMODE_SILENT
+                    $options['error'] :
+                    PDO::ERRMODE_SILENT
                 );
             }
 
@@ -1166,13 +1166,12 @@ class Medoo
      */
     protected function selectContext(
         string $table,
-        array  &$map,
-               $join,
-               &$columns = null,
-               $where = null,
-               $columnFn = null
-    ): string
-    {
+        array &$map,
+        $join,
+        &$columns = null,
+        $where = null,
+        $columnFn = null
+    ): string {
         preg_match('/(?<table>[\p{L}_][\p{L}\p{N}@$#\-_]*)\s*\((?<alias>[\p{L}_][\p{L}\p{N}@$#\-_]*)\)/u', $table, $tableMatch);
 
         if (isset($tableMatch['table'], $tableMatch['alias'])) {
@@ -1302,9 +1301,9 @@ class Medoo
 
                                 // For ['column1' => 'column2']
                                 $table . '.' . $this->columnQuote($key)
-                            ) .
-                            ' = ' .
-                            $this->tableQuote($match['alias'] ?? $match['table']) . '.' . $this->columnQuote($value);
+                        ) .
+                        ' = ' .
+                        $this->tableQuote($match['alias'] ?? $match['table']) . '.' . $this->columnQuote($value);
                     }
 
                     $relation = 'ON ' . implode(' AND ', $joins);
@@ -1386,10 +1385,9 @@ class Medoo
         array $columns,
         array $columnMap,
         array &$stack,
-        bool  $root,
+        bool $root,
         array &$result = null
-    ): void
-    {
+    ): void {
         if ($root) {
             $columnsKey = array_keys($columns);
 
@@ -1443,15 +1441,15 @@ class Medoo
                     switch ($map[1]) {
 
                         case 'Number':
-                            $stack[$columnKey] = (float)$item;
+                            $stack[$columnKey] = (float) $item;
                             break;
 
                         case 'Int':
-                            $stack[$columnKey] = (int)$item;
+                            $stack[$columnKey] = (int) $item;
                             break;
 
                         case 'Bool':
-                            $stack[$columnKey] = (bool)$item;
+                            $stack[$columnKey] = (bool) $item;
                             break;
 
                         case 'Object':
@@ -1496,9 +1494,9 @@ class Medoo
         );
 
         $query .= ' RETURNING ' .
-            implode(', ', array_map([$this, 'columnQuote'], $returnColumns)) .
-            ' INTO ' .
-            implode(', ', array_keys($data));
+                    implode(', ', array_map([$this, 'columnQuote'], $returnColumns)) .
+                    ' INTO ' .
+                    implode(', ', array_keys($data));
 
         return $this->exec($query, $map, function ($statement) use (&$data) {
             // @codeCoverageIgnoreStart
@@ -1625,8 +1623,8 @@ class Medoo
 
                 $callback(
                     $isSingle ?
-                        $currentStack[$columnMap[$column][0]] :
-                        $currentStack
+                    $currentStack[$columnMap[$column][0]] :
+                    $currentStack
                 );
             } else {
                 $this->dataMap($data, $columns, $columnMap, $currentStack, true, $result);
@@ -2015,7 +2013,7 @@ class Medoo
         }
 
         // @codeCoverageIgnoreStart
-        return (string)$query->fetchColumn();
+        return (string) $query->fetchColumn();
     }
     // @codeCoverageIgnoreEnd
 
@@ -2030,7 +2028,7 @@ class Medoo
      */
     public function count(string $table, $join = null, $column = null, $where = null): ?int
     {
-        return (int)$this->aggregate('COUNT', $table, $join, $column, $where);
+        return (int) $this->aggregate('COUNT', $table, $join, $column, $where);
     }
 
     /**
@@ -2132,7 +2130,7 @@ class Medoo
         } elseif ($type === 'pgsql') {
             $id = $this->pdo->query('SELECT LASTVAL()')->fetchColumn();
 
-            return (string)$id ?: null;
+            return (string) $id ?: null;
         }
 
         return $this->pdo->lastInsertId($name);

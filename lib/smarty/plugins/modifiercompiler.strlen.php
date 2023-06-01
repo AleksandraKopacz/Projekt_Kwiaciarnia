@@ -13,7 +13,7 @@
  * Purpose:  return the length of the given string
  *
  * @link   https://www.smarty.net/docs/en/language.modifier.strlen.tpl strlen (Smarty online manual)
- *
+  *
  * @param array $params parameters
  *
  * @return string with compiled code

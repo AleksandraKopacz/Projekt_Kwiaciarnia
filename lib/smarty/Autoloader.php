@@ -7,7 +7,7 @@
 
 
 if (!defined('SMARTY_HELPER_FUNCTIONS_LOADED')) {
-    include __DIR__ . '/functions.php';
+	include __DIR__ . '/functions.php';
 }
 
 /**

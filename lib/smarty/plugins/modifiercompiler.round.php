@@ -13,7 +13,7 @@
  * Purpose:  Returns the rounded value of num to specified precision (number of digits after the decimal point)
  *
  * @link   https://www.smarty.net/docs/en/language.modifier.round.tpl round (Smarty online manual)
- *
+  *
  * @param array $params parameters
  *
  * @return string with compiled code

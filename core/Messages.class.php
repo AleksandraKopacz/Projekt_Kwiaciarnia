@@ -1,6 +1,5 @@
 <?php namespace core;
 require_once 'Message.class.php';
-
 class Messages
 {
     private $m = array();

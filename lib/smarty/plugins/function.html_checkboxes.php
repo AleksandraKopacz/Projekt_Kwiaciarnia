@@ -128,17 +128,17 @@ function smarty_function_html_checkboxes($params, Smarty_Internal_Template $temp
                 break;
             case 'disabled':
             case 'readonly':
-                if (!empty($params['strict'])) {
-                    if (!is_scalar($_val)) {
-                        trigger_error(
-                            "html_options: {$_key} attribute must be a scalar, only boolean true or string '{$_key}' will actually add the attribute",
-                            E_USER_NOTICE
-                        );
-                    }
-                    if ($_val === true || $_val === $_key) {
-                        $extra .= ' ' . $_key . '="' . smarty_function_escape_special_chars($_key) . '"';
-                    }
-                    break;
+            if (!empty($params['strict'])) {
+                if (!is_scalar($_val)) {
+                    trigger_error(
+                        "html_options: {$_key} attribute must be a scalar, only boolean true or string '{$_key}' will actually add the attribute",
+                        E_USER_NOTICE
+                    );
+                }
+                if ($_val === true || $_val === $_key) {
+                    $extra .= ' ' . $_key . '="' . smarty_function_escape_special_chars($_key) . '"';
+                }
+                break;
                 }
             // omit break; to fall through!
             // no break

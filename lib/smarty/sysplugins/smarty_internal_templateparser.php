@@ -2201,7 +2201,6 @@ class Smarty_Internal_Templateparser
             $this->_retvalue = $this->compiler->compileTag($this->yystack[$this->yyidx + -1]->minor, $this->yystack[$this->yyidx + 0]->minor);
         }
     }
-
 // line 388 "../smarty/lexer/smarty_internal_templateparser.y"
     public function yy_r25()
     {
@@ -2214,7 +2213,6 @@ class Smarty_Internal_Templateparser
             $this->_retvalue = $this->compiler->compileTag($this->yystack[$this->yyidx + 0]->minor, array());
         }
     }
-
 // line 401 "../smarty/lexer/smarty_internal_templateparser.y"
     public function yy_r26()
     {

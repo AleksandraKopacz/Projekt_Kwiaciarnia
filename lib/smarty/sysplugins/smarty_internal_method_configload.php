@@ -41,6 +41,9 @@ class Smarty_Internal_Method_ConfigLoad
     /**
      * load a config file, optionally load just selected sections
      *
+     * @api  Smarty::configLoad()
+     * @link https://www.smarty.net/docs/en/api.config.load.tpl
+     *
      * @param \Smarty|\Smarty_Internal_Data|\Smarty_Internal_Template $data
      * @param string $config_file filename
      * @param mixed $sections array of section names, single
@@ -49,9 +52,6 @@ class Smarty_Internal_Method_ConfigLoad
      *                                                                             shall be loaded
      *
      * @throws \Exception
-     * @link https://www.smarty.net/docs/en/api.config.load.tpl
-     *
-     * @api  Smarty::configLoad()
      */
     public function _loadConfigFile(Smarty_Internal_Data $data, $config_file, $sections = null, $scope = 0)
     {

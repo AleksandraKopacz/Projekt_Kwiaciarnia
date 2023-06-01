@@ -74,7 +74,7 @@ class Smarty_Internal_Templatelexer
      */
     public $phpType = '';
 
-    /**
+   /**
      * state number
      *
      * @var int
@@ -377,13 +377,11 @@ class Smarty_Internal_Templatelexer
 
 
     const TEXT = 1;
-
     public function yy_r1_1()
     {
 
         $this->token = Smarty_Internal_Templateparser::TP_TEXT;
     }
-
     public function yy_r1_2()
     {
 
@@ -397,34 +395,29 @@ class Smarty_Internal_Templatelexer
         $this->value = substr($this->data, $this->counter, $to - $this->counter);
         return false;
     }
-
     public function yy_r1_4()
     {
 
         $this->token = Smarty_Internal_Templateparser::TP_TEXT;
     }
-
     public function yy_r1_6()
     {
 
         $this->token = Smarty_Internal_Templateparser::TP_LITERALSTART;
         $this->yypushstate(self::LITERAL);
     }
-
     public function yy_r1_8()
     {
 
         $this->token = Smarty_Internal_Templateparser::TP_LITERALEND;
         $this->yypushstate(self::LITERAL);
     }
-
     public function yy_r1_10()
     {
 
         $this->yypushstate(self::TAG);
         return true;
     }
-
     public function yy_r1_12()
     {
 
@@ -498,7 +491,6 @@ class Smarty_Internal_Templatelexer
 
 
     const TAG = 2;
-
     public function yy_r2_1()
     {
 
@@ -506,7 +498,6 @@ class Smarty_Internal_Templatelexer
         $this->yybegin(self::TAGBODY);
         $this->taglineno = $this->line;
     }
-
     public function yy_r2_4()
     {
 
@@ -514,7 +505,6 @@ class Smarty_Internal_Templatelexer
         $this->yybegin(self::TAGBODY);
         $this->taglineno = $this->line;
     }
-
     public function yy_r2_6()
     {
 
@@ -522,7 +512,6 @@ class Smarty_Internal_Templatelexer
         $this->yybegin(self::TAGBODY);
         $this->taglineno = $this->line;
     }
-
     public function yy_r2_8()
     {
 
@@ -530,7 +519,6 @@ class Smarty_Internal_Templatelexer
         $this->yybegin(self::TAGBODY);
         $this->taglineno = $this->line;
     }
-
     public function yy_r2_10()
     {
 
@@ -538,7 +526,6 @@ class Smarty_Internal_Templatelexer
         $this->yybegin(self::TAGBODY);
         $this->taglineno = $this->line;
     }
-
     public function yy_r2_12()
     {
 
@@ -546,7 +533,6 @@ class Smarty_Internal_Templatelexer
         $this->token = Smarty_Internal_Templateparser::TP_SIMPLETAG;
         $this->taglineno = $this->line;
     }
-
     public function yy_r2_15()
     {
 
@@ -554,7 +540,6 @@ class Smarty_Internal_Templatelexer
         $this->token = Smarty_Internal_Templateparser::TP_SMARTYBLOCKCHILDPARENT;
         $this->taglineno = $this->line;
     }
-
     public function yy_r2_18()
     {
 
@@ -562,7 +547,6 @@ class Smarty_Internal_Templatelexer
         $this->token = Smarty_Internal_Templateparser::TP_CLOSETAG;
         $this->taglineno = $this->line;
     }
-
     public function yy_r2_20()
     {
 
@@ -577,7 +561,6 @@ class Smarty_Internal_Templatelexer
             $this->taglineno = $this->line;
         }
     }
-
     public function yy_r2_23()
     {
 
@@ -585,7 +568,6 @@ class Smarty_Internal_Templatelexer
         $this->yybegin(self::TAGBODY);
         $this->taglineno = $this->line;
     }
-
     public function yy_r2_25()
     {
 
@@ -652,21 +634,18 @@ class Smarty_Internal_Templatelexer
 
 
     const TAGBODY = 3;
-
     public function yy_r3_1()
     {
 
         $this->token = Smarty_Internal_Templateparser::TP_RDEL;
         $this->yypopstate();
     }
-
     public function yy_r3_2()
     {
 
         $this->yypushstate(self::TAG);
         return true;
     }
-
     public function yy_r3_4()
     {
 
@@ -674,169 +653,141 @@ class Smarty_Internal_Templatelexer
         $this->yypushstate(self::DOUBLEQUOTEDSTRING);
         $this->compiler->enterDoubleQuote();
     }
-
     public function yy_r3_5()
     {
 
         $this->token = Smarty_Internal_Templateparser::TP_SINGLEQUOTESTRING;
     }
-
     public function yy_r3_6()
     {
 
         $this->token = Smarty_Internal_Templateparser::TP_DOLLARID;
     }
-
     public function yy_r3_7()
     {
 
         $this->token = Smarty_Internal_Templateparser::TP_DOLLAR;
     }
-
     public function yy_r3_8()
     {
 
         $this->token = Smarty_Internal_Templateparser::TP_ISIN;
     }
-
     public function yy_r3_9()
     {
 
         $this->token = Smarty_Internal_Templateparser::TP_AS;
     }
-
     public function yy_r3_10()
     {
 
         $this->token = Smarty_Internal_Templateparser::TP_TO;
     }
-
     public function yy_r3_11()
     {
 
         $this->token = Smarty_Internal_Templateparser::TP_STEP;
     }
-
     public function yy_r3_12()
     {
 
         $this->token = Smarty_Internal_Templateparser::TP_INSTANCEOF;
     }
-
     public function yy_r3_13()
     {
 
         $this->token = Smarty_Internal_Templateparser::TP_LOGOP;
     }
-
     public function yy_r3_15()
     {
 
         $this->token = Smarty_Internal_Templateparser::TP_SLOGOP;
     }
-
     public function yy_r3_17()
     {
 
         $this->token = Smarty_Internal_Templateparser::TP_TLOGOP;
     }
-
     public function yy_r3_20()
     {
 
         $this->token = Smarty_Internal_Templateparser::TP_SINGLECOND;
     }
-
     public function yy_r3_23()
     {
 
         $this->token = Smarty_Internal_Templateparser::TP_NOT;
     }
-
     public function yy_r3_24()
     {
 
         $this->token = Smarty_Internal_Templateparser::TP_TYPECAST;
     }
-
     public function yy_r3_28()
     {
 
         $this->token = Smarty_Internal_Templateparser::TP_OPENP;
     }
-
     public function yy_r3_29()
     {
 
         $this->token = Smarty_Internal_Templateparser::TP_CLOSEP;
     }
-
     public function yy_r3_30()
     {
 
         $this->token = Smarty_Internal_Templateparser::TP_OPENB;
     }
-
     public function yy_r3_31()
     {
 
         $this->token = Smarty_Internal_Templateparser::TP_CLOSEB;
     }
-
     public function yy_r3_32()
     {
 
         $this->token = Smarty_Internal_Templateparser::TP_PTR;
     }
-
     public function yy_r3_33()
     {
 
         $this->token = Smarty_Internal_Templateparser::TP_APTR;
     }
-
     public function yy_r3_34()
     {
 
         $this->token = Smarty_Internal_Templateparser::TP_EQUAL;
     }
-
     public function yy_r3_35()
     {
 
         $this->token = Smarty_Internal_Templateparser::TP_INCDEC;
     }
-
     public function yy_r3_37()
     {
 
         $this->token = Smarty_Internal_Templateparser::TP_UNIMATH;
     }
-
     public function yy_r3_39()
     {
 
         $this->token = Smarty_Internal_Templateparser::TP_MATH;
     }
-
     public function yy_r3_41()
     {
 
         $this->token = Smarty_Internal_Templateparser::TP_AT;
     }
-
     public function yy_r3_42()
     {
 
         $this->token = Smarty_Internal_Templateparser::TP_ARRAYOPEN;
     }
-
     public function yy_r3_43()
     {
 
         $this->token = Smarty_Internal_Templateparser::TP_HATCH;
     }
-
     public function yy_r3_44()
     {
 
@@ -849,86 +800,72 @@ class Smarty_Internal_Templatelexer
             $this->token = Smarty_Internal_Templateparser::TP_ATTR;
         }
     }
-
     public function yy_r3_45()
     {
 
         $this->token = Smarty_Internal_Templateparser::TP_NAMESPACE;
     }
-
     public function yy_r3_48()
     {
 
         $this->token = Smarty_Internal_Templateparser::TP_ID;
     }
-
     public function yy_r3_49()
     {
 
         $this->token = Smarty_Internal_Templateparser::TP_INTEGER;
     }
-
     public function yy_r3_50()
     {
 
         $this->token = Smarty_Internal_Templateparser::TP_BACKTICK;
         $this->yypopstate();
     }
-
     public function yy_r3_51()
     {
 
         $this->token = Smarty_Internal_Templateparser::TP_VERT;
     }
-
     public function yy_r3_52()
     {
 
         $this->token = Smarty_Internal_Templateparser::TP_DOT;
     }
-
     public function yy_r3_53()
     {
 
         $this->token = Smarty_Internal_Templateparser::TP_COMMA;
     }
-
     public function yy_r3_54()
     {
 
         $this->token = Smarty_Internal_Templateparser::TP_SEMICOLON;
     }
-
     public function yy_r3_55()
     {
 
         $this->token = Smarty_Internal_Templateparser::TP_DOUBLECOLON;
     }
-
     public function yy_r3_56()
     {
 
         $this->token = Smarty_Internal_Templateparser::TP_COLON;
     }
-
     public function yy_r3_57()
     {
 
         $this->token = Smarty_Internal_Templateparser::TP_QMARK;
     }
-
     public function yy_r3_58()
     {
 
         $this->token = Smarty_Internal_Templateparser::TP_HEX;
     }
-
     public function yy_r3_59()
     {
 
         $this->token = Smarty_Internal_Templateparser::TP_SPACE;
     }
-
     public function yy_r3_60()
     {
 
@@ -993,14 +930,12 @@ class Smarty_Internal_Templatelexer
 
 
     const LITERAL = 4;
-
     public function yy_r4_1()
     {
 
         $this->literal_cnt++;
         $this->token = Smarty_Internal_Templateparser::TP_LITERAL;
     }
-
     public function yy_r4_3()
     {
 
@@ -1012,7 +947,6 @@ class Smarty_Internal_Templatelexer
             $this->yypopstate();
         }
     }
-
     public function yy_r4_5()
     {
 
@@ -1088,39 +1022,33 @@ class Smarty_Internal_Templatelexer
 
 
     const DOUBLEQUOTEDSTRING = 5;
-
     public function yy_r5_1()
     {
 
         $this->token = Smarty_Internal_Templateparser::TP_TEXT;
     }
-
     public function yy_r5_3()
     {
 
         $this->token = Smarty_Internal_Templateparser::TP_TEXT;
     }
-
     public function yy_r5_5()
     {
 
         $this->token = Smarty_Internal_Templateparser::TP_TEXT;
     }
-
     public function yy_r5_7()
     {
 
         $this->yypushstate(self::TAG);
         return true;
     }
-
     public function yy_r5_9()
     {
 
         $this->yypushstate(self::TAG);
         return true;
     }
-
     public function yy_r5_11()
     {
 
@@ -1128,14 +1056,12 @@ class Smarty_Internal_Templatelexer
         $this->taglineno = $this->line;
         $this->yypushstate(self::TAGBODY);
     }
-
     public function yy_r5_13()
     {
 
         $this->token = Smarty_Internal_Templateparser::TP_QUOTE;
         $this->yypopstate();
     }
-
     public function yy_r5_14()
     {
 
@@ -1144,25 +1070,21 @@ class Smarty_Internal_Templatelexer
         $this->yypushstate(self::TAGBODY);
         $this->taglineno = $this->line;
     }
-
     public function yy_r5_15()
     {
 
         $this->token = Smarty_Internal_Templateparser::TP_DOLLARID;
     }
-
     public function yy_r5_16()
     {
 
         $this->token = Smarty_Internal_Templateparser::TP_TEXT;
     }
-
     public function yy_r5_17()
     {
 
         $this->token = Smarty_Internal_Templateparser::TP_TEXT;
     }
-
     public function yy_r5_22()
     {
 
