@@ -12,6 +12,12 @@ $texthover: #312E32;
 body {
   background-color: $bgcolor;
   font-family: 'Questrial', sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+img {
+  pointer-events: none;
 }
 
 /* Main menu */
@@ -22,6 +28,33 @@ body {
 
 #line {
   background-color: $quartz;
+}
+
+#mainimage {
+  padding-bottom: 2em;
+}
+
+#imagecredits {
+  background-color: $quartz;
+}
+
+.dropdown-menu {
+  background-color: $lavender;
+  border-radius: 0;
+}
+
+a:visited.dropdown-item {
+  background-color: $lavender;
+  color: $texthover;
+}
+
+a:hover.dropdown-item {
+  background-color: $lavender;
+  color: $texthover;
+}
+
+a:active.dropdown-item {
+  background-color: $lavender;
 }
 
 /* Footer */
@@ -41,4 +74,10 @@ body {
 
 a:hover#flinks {
   color: $texthover;
+}
+
+@media screen and (max-width: 650px) {
+  .dropdown-menu {
+    border: none;
+  }
 }

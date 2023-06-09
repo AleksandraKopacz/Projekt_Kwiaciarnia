@@ -1,37 +1,76 @@
 /* Variables */
 /* Body */
 body {
-    background-color: white;
-    font-family: "Questrial", sans-serif;
+  background-color: white;
+  font-family: "Questrial", sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+img {
+  pointer-events: none;
 }
 
 /* Main menu */
 #mainmenu {
-    background-color: #F7E7FB;
-    box-shadow: 0 8px 6px -6px rgba(215, 215, 215, 0.68);
+  background-color: #F7E7FB;
+  box-shadow: 0 8px 6px -6px rgba(215, 215, 215, 0.68);
 }
 
 #line {
-    background-color: #E0C2F2;
+  background-color: #E0C2F2;
+}
+
+#mainimage {
+  padding-bottom: 2em;
+}
+
+#imagecredits {
+  background-color: #E0C2F2;
+}
+
+.dropdown-menu {
+  background-color: #F7E7FB;
+  border-radius: 0;
+}
+
+a:visited.dropdown-item {
+  background-color: #F7E7FB;
+  color: #312E32;
+}
+
+a:hover.dropdown-item {
+  background-color: #F7E7FB;
+  color: #312E32;
+}
+
+a:active.dropdown-item {
+  background-color: #F7E7FB;
 }
 
 /* Footer */
 #aboutusfooter {
-    background-color: #F7E7FB;
-    padding-top: 1em;
+  background-color: #F7E7FB;
+  padding-top: 1em;
 }
 
 #creditsfooter {
-    background-color: #E0C2F2;
+  background-color: #E0C2F2;
 }
 
 #flinks {
-    text-decoration: none;
-    color: #565158;
+  text-decoration: none;
+  color: #565158;
 }
 
 a:hover#flinks {
-    color: #312E32;
+  color: #312E32;
+}
+
+@media screen and (max-width: 650px) {
+  .dropdown-menu {
+    border: none;
+  }
 }
 
 /*# sourceMappingURL=styles.css.map */

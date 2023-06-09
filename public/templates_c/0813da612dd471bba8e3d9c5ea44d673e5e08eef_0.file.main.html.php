@@ -1,25 +1,25 @@
 <?php
-/* Smarty version 4.3.0, created on 2023-06-04 00:57:21
+/* Smarty version 4.3.0, created on 2023-06-05 14:31:22
   from 'C:\xampp\htdocs\Kwiaciarnia\app\views\templates\main.html' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array(
     'version' => '4.3.0',
-    'unifunc' => 'content_647bc551398f83_14466899',
+    'unifunc' => 'content_647dd59a5ca687_20523179',
     'has_nocache_code' => false,
     'file_dependency' =>
         array(
             '0813da612dd471bba8e3d9c5ea44d673e5e08eef' =>
                 array(
                     0 => 'C:\\xampp\\htdocs\\Kwiaciarnia\\app\\views\\templates\\main.html',
-                    1 => 1685833039,
+                    1 => 1685968273,
                     2 => 'file',
                 ),
         ),
     'includes' =>
         array(),
 ), false)) {
-    function content_647bc551398f83_14466899(Smarty_Internal_Template $_smarty_tpl)
+    function content_647dd59a5ca687_20523179(Smarty_Internal_Template $_smarty_tpl)
     {
         $_smarty_tpl->_loadInheritance();
         $_smarty_tpl->inheritance->init($_smarty_tpl, false);
@@ -77,7 +77,8 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array(
                                 <li><a class="dropdown-item" href="#">Bukiety</a></li>
                                 <li><a class="dropdown-item"
                                        href="<?php echo $_smarty_tpl->tpl_vars['conf']->value->app_root; ?>
-/flowers">Skomponuj swój własny bukiet</a></li>
+/flowers">Skomponuj swój własny bukiet</a>
+                                </li>
                             </ul>
                         </li>
                         <li class="nav-item">
@@ -97,7 +98,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array(
         <!-- CONTENT -->
         <main id="main">
             <?php
-            $_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_833661777647bc551396fb0_69904130', 'content');
+            $_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_241372744647dd59a5c8697_99733358', 'content');
             ?>
 
         </main>
@@ -147,12 +148,12 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array(
 
     /* {block 'content'} */
 
-    class Block_833661777647bc551396fb0_69904130 extends Smarty_Internal_Block
+    class Block_241372744647dd59a5c8697_99733358 extends Smarty_Internal_Block
     {
         public $subBlocks = array(
             'content' =>
                 array(
-                    0 => 'Block_833661777647bc551396fb0_69904130',
+                    0 => 'Block_241372744647dd59a5c8697_99733358',
                 ),
         );
 
