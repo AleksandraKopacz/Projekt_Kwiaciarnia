@@ -10,7 +10,7 @@ $conf->app_assets = '/Kwiaciarnia/assets'; # project assets
 # ---- Database config - values required by Medoo
 $conf->db_type = 'mysql';
 $conf->db_server = 'localhost';
-$conf->db_name = 'kwiaciarnia';
+$conf->db_name = 'kwiaciarnia1';
 $conf->db_user = 'root';
 $conf->db_pass = '';
 $conf->db_charset = 'utf8';
