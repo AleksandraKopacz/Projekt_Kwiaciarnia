@@ -1,25 +1,25 @@
 <?php
-/* Smarty version 4.3.0, created on 2023-06-10 02:27:56
+/* Smarty version 4.3.0, created on 2023-06-10 23:49:30
   from 'C:\xampp\htdocs\Kwiaciarnia\app\views\templates\main.html' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array(
     'version' => '4.3.0',
-    'unifunc' => 'content_6483c38cc21870_62666334',
+    'unifunc' => 'content_6484efea71d6d3_72964261',
     'has_nocache_code' => false,
     'file_dependency' =>
         array(
             '0813da612dd471bba8e3d9c5ea44d673e5e08eef' =>
                 array(
                     0 => 'C:\\xampp\\htdocs\\Kwiaciarnia\\app\\views\\templates\\main.html',
-                    1 => 1686356869,
+                    1 => 1686433344,
                     2 => 'file',
                 ),
         ),
     'includes' =>
         array(),
 ), false)) {
-    function content_6483c38cc21870_62666334(Smarty_Internal_Template $_smarty_tpl)
+    function content_6484efea71d6d3_72964261(Smarty_Internal_Template $_smarty_tpl)
     {
         $_smarty_tpl->_loadInheritance();
         $_smarty_tpl->inheritance->init($_smarty_tpl, false);
@@ -97,7 +97,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array(
         <!-- CONTENT -->
         <main id="main">
             <?php
-            $_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_6403535436483c38cc1efe4_25241605', 'content');
+            $_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_18061987736484efea71b7f3_50663125', 'content');
             ?>
 
         </main>
@@ -147,12 +147,12 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array(
 
     /* {block 'content'} */
 
-    class Block_6403535436483c38cc1efe4_25241605 extends Smarty_Internal_Block
+    class Block_18061987736484efea71b7f3_50663125 extends Smarty_Internal_Block
     {
         public $subBlocks = array(
             'content' =>
                 array(
-                    0 => 'Block_6403535436483c38cc1efe4_25241605',
+                    0 => 'Block_18061987736484efea71b7f3_50663125',
                 ),
         );
 
