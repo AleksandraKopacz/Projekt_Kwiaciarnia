@@ -1,25 +1,25 @@
 <?php
-/* Smarty version 4.3.0, created on 2023-06-05 14:31:22
+/* Smarty version 4.3.0, created on 2023-06-10 02:27:56
   from 'C:\xampp\htdocs\Kwiaciarnia\app\views\templates\main.html' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array(
     'version' => '4.3.0',
-    'unifunc' => 'content_647dd59a5ca687_20523179',
+    'unifunc' => 'content_6483c38cc21870_62666334',
     'has_nocache_code' => false,
     'file_dependency' =>
         array(
             '0813da612dd471bba8e3d9c5ea44d673e5e08eef' =>
                 array(
                     0 => 'C:\\xampp\\htdocs\\Kwiaciarnia\\app\\views\\templates\\main.html',
-                    1 => 1685968273,
+                    1 => 1686356869,
                     2 => 'file',
                 ),
         ),
     'includes' =>
         array(),
 ), false)) {
-    function content_647dd59a5ca687_20523179(Smarty_Internal_Template $_smarty_tpl)
+    function content_6483c38cc21870_62666334(Smarty_Internal_Template $_smarty_tpl)
     {
         $_smarty_tpl->_loadInheritance();
         $_smarty_tpl->inheritance->init($_smarty_tpl, false);
@@ -74,7 +74,9 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array(
                                 Oferta
                             </a>
                             <ul class="dropdown-menu">
-                                <li><a class="dropdown-item" href="#">Bukiety</a></li>
+                                <li><a class="dropdown-item"
+                                       href="<?php echo $_smarty_tpl->tpl_vars['conf']->value->app_root; ?>
+/bouquet">Bukiety</a></li>
                                 <li><a class="dropdown-item"
                                        href="<?php echo $_smarty_tpl->tpl_vars['conf']->value->app_root; ?>
 /flowers">Skomponuj swój własny bukiet</a>
@@ -83,9 +85,6 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array(
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="#">Zamów kwiaty</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">Nasze oddziały</a>
                         </li>
                     </ul>
                     <span class="navbar-text">
@@ -98,7 +97,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array(
         <!-- CONTENT -->
         <main id="main">
             <?php
-            $_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_241372744647dd59a5c8697_99733358', 'content');
+            $_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_6403535436483c38cc1efe4_25241605', 'content');
             ?>
 
         </main>
@@ -111,11 +110,11 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array(
                         <h5><b>INFORMACJE</b></h5>
                         <p><a href="<?php echo $_smarty_tpl->tpl_vars['conf']->value->app_root; ?>
 " id="flinks">Strona główna</a></p>
-                        <p><a href="#" id="flinks">Bukiety</a></p>
+                        <p><a href="<?php echo $_smarty_tpl->tpl_vars['conf']->value->app_root; ?>
+/bouquet" id="flinks">Bukiety</a></p>
                         <p><a href="<?php echo $_smarty_tpl->tpl_vars['conf']->value->app_root; ?>
 /flowers" id="flinks">Skomponuj swój własny bukiet</a></p>
                         <p><a href="#" id="flinks">Zamów kwiaty</a></p>
-                        <p><a href="#" id="flinks">Nasze oddziały</a></p>
                     </div>
                     <div class="col-sm">
                         <h5><b>GODZINY OTWARCIA</b></h5>
@@ -148,12 +147,12 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array(
 
     /* {block 'content'} */
 
-    class Block_241372744647dd59a5c8697_99733358 extends Smarty_Internal_Block
+    class Block_6403535436483c38cc1efe4_25241605 extends Smarty_Internal_Block
     {
         public $subBlocks = array(
             'content' =>
                 array(
-                    0 => 'Block_241372744647dd59a5c8697_99733358',
+                    0 => 'Block_6403535436483c38cc1efe4_25241605',
                 ),
         );
 
