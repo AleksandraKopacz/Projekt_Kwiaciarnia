@@ -17,21 +17,20 @@
                     <div class="text-center">
                         <input type="submit" value="Zaloguj się" id="submitFilterButton">
                         <p><a href="{$conf->app_root}/register" id="flinks">Zarejestruj się</a></p>
+                        {if $msgs->isMessage()}
+                            <div>
+                                <ul style="list-style: none; color: #B270A9;">
+                                    {foreach $msgs->getMessages() as $msg}
+                                        {strip}
+                                            <li>{$msg->text}</li>
+                                        {/strip}
+                                    {/foreach}
+                                </ul>
+                            </div>
+                        {/if}
                     </div>
             </div>
             </form>
         </div>
     </div>
-    </div>
-    {if $msgs->isMessage()}
-        <div>
-            <ul>
-                {foreach $msgs->getMessages() as $msg}
-                    {strip}
-                        <li>{$msg->text}</li>
-                    {/strip}
-                {/foreach}
-            </ul>
-        </div>
-    {/if}
 {/block}
