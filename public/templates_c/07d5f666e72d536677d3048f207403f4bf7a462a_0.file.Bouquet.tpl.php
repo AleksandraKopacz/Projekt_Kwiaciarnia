@@ -1,25 +1,25 @@
 <?php
-/* Smarty version 4.3.0, created on 2023-06-11 01:43:35
+/* Smarty version 4.3.0, created on 2023-06-20 20:52:21
   from 'C:\xampp\htdocs\Kwiaciarnia\app\views\Bouquet.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array(
     'version' => '4.3.0',
-    'unifunc' => 'content_64850aa70bf445_41117677',
+    'unifunc' => 'content_6491f565acc3d7_37173733',
     'has_nocache_code' => false,
     'file_dependency' =>
         array(
             '07d5f666e72d536677d3048f207403f4bf7a462a' =>
                 array(
                     0 => 'C:\\xampp\\htdocs\\Kwiaciarnia\\app\\views\\Bouquet.tpl',
-                    1 => 1686440580,
+                    1 => 1687287043,
                     2 => 'file',
                 ),
         ),
     'includes' =>
         array(),
 ), false)) {
-    function content_64850aa70bf445_41117677(Smarty_Internal_Template $_smarty_tpl)
+    function content_6491f565acc3d7_37173733(Smarty_Internal_Template $_smarty_tpl)
     {
         $_smarty_tpl->_loadInheritance();
         $_smarty_tpl->inheritance->init($_smarty_tpl, true);
@@ -27,18 +27,18 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array(
 
 
         <?php
-        $_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_102397812664850aa70ae317_34503875', 'content');
+        $_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_5255260846491f5659b9739_40448695', 'content');
         $_smarty_tpl->inheritance->endChild($_smarty_tpl, "main.html");
     }
 
     /* {block 'content'} */
 
-    class Block_102397812664850aa70ae317_34503875 extends Smarty_Internal_Block
+    class Block_5255260846491f5659b9739_40448695 extends Smarty_Internal_Block
     {
         public $subBlocks = array(
             'content' =>
                 array(
-                    0 => 'Block_102397812664850aa70ae317_34503875',
+                    0 => 'Block_5255260846491f5659b9739_40448695',
                 ),
         );
 
@@ -54,7 +54,8 @@ bouquet" method="post">
                             <label class="form-label" for="priceTo">Cena do:</label>
                             <input class="form-control" name="priceTo" id="priceTo" type="number"
                                    placeholder="<?php echo $_smarty_tpl->tpl_vars['maxPrice']->value; ?>
-" value="<?php echo $_smarty_tpl->tpl_vars['searchForm']->value->to; ?>
+"
+                                   value="<?php echo $_smarty_tpl->tpl_vars['searchForm']->value->to; ?>
 "
                                    min="<?php echo $_smarty_tpl->tpl_vars['minPrice']->value; ?>
 " max="<?php echo $_smarty_tpl->tpl_vars['maxPrice']->value; ?>
@@ -92,8 +93,8 @@ bouquet" method="post">
                     if ($_from !== null) foreach ($_from as $_smarty_tpl->tpl_vars['u']->value) {
                         $_smarty_tpl->tpl_vars['u']->do_else = false;
                         ?>
-                        <div class="col-3"><p><img src="<?php echo $_smarty_tpl->tpl_vars['conf']->value->app_assets; ?>
-/flowers/<?php echo $_smarty_tpl->tpl_vars['u']->value["img"]; ?>
+                        <div class="col-3"><p><img src="<?php echo $_smarty_tpl->tpl_vars['conf']->value->app_url; ?>
+/assets/flowers/<?php echo $_smarty_tpl->tpl_vars['u']->value["img"]; ?>
 " alt="bukiet" class="img-fluid"></p>
                             <p><?php echo $_smarty_tpl->tpl_vars['u']->value["usluga"]; ?>
                             </p>

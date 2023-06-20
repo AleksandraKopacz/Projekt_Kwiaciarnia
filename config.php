@@ -5,7 +5,6 @@ $conf->debug = true; # set true during development and use in your code (for ins
 $conf->server_name = 'localhost';   # server address and port
 $conf->protocol = 'http';           # http or https
 $conf->app_root = '/Kwiaciarnia/public';   # project subfolder in domain (relative to main domain)
-$conf->app_assets = '/Kwiaciarnia/assets'; # project assets
 
 # ---- Database config - values required by Medoo
 $conf->db_type = 'mysql';
