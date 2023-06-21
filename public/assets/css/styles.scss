@@ -53,6 +53,16 @@ a:active.dropdown-item {
   background-color: $lavender;
 }
 
+.user-control {
+  border: none;
+  border-bottom: 2px solid $quartz;
+}
+
+#errorMsg {
+  list-style: none;
+  color: #B270A9;
+}
+
 /* Footer */
 #aboutusfooter {
   background-color: $lavender;

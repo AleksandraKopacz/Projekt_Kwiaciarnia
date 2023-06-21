@@ -1,25 +1,25 @@
 <?php
-/* Smarty version 4.3.0, created on 2023-06-20 21:52:48
+/* Smarty version 4.3.0, created on 2023-06-21 22:10:58
   from 'C:\xampp\htdocs\Kwiaciarnia\app\views\templates\main.html' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array(
     'version' => '4.3.0',
-    'unifunc' => 'content_6492039055f861_97218201',
+    'unifunc' => 'content_64935952b0fb61_29721352',
     'has_nocache_code' => false,
     'file_dependency' =>
         array(
             '0813da612dd471bba8e3d9c5ea44d673e5e08eef' =>
                 array(
                     0 => 'C:\\xampp\\htdocs\\Kwiaciarnia\\app\\views\\templates\\main.html',
-                    1 => 1687290766,
+                    1 => 1687378247,
                     2 => 'file',
                 ),
         ),
     'includes' =>
         array(),
 ), false)) {
-    function content_6492039055f861_97218201(Smarty_Internal_Template $_smarty_tpl)
+    function content_64935952b0fb61_29721352(Smarty_Internal_Template $_smarty_tpl)
     {
         $_smarty_tpl->_loadInheritance();
         $_smarty_tpl->inheritance->init($_smarty_tpl, false);
@@ -32,8 +32,8 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array(
             <meta charset="UTF-8">
             <meta name="viewport" content="width=device-width, initial-scale=1.0">
             <!-- ICON -->
-            <link rel="shortcut icon" href="<?php echo $_smarty_tpl->tpl_vars['conf']->value->app_url; ?>
-/assets/images/favicon.png">
+            <link href="<?php echo $_smarty_tpl->tpl_vars['conf']->value->app_url; ?>
+/assets/images/favicon.png" rel="shortcut icon">
             <!-- FONTS -->
             <link rel="preconnect" href="https://fonts.googleapis.com">
             <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -45,18 +45,18 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array(
                   integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ"
                   crossorigin="anonymous">
             <!-- CSS -->
-            <link rel="stylesheet" href="<?php echo $_smarty_tpl->tpl_vars['conf']->value->app_url; ?>
-/assets/css/styles.css">
+            <link href="<?php echo $_smarty_tpl->tpl_vars['conf']->value->app_url; ?>
+/assets/css/styles.css" rel="stylesheet">
         </head>
-        <body>
+        <body class="d-flex flex-column min-vh-100">
         <!-- NAV -->
         <nav class="navbar navbar-expand-sm sticky-top" id="line"></nav>
         <nav class="navbar navbar-expand-sm sticky-top" id="mainmenu">
             <div class="container-fluid">
                 <a class="navbar-brand ms-auto" href="<?php echo $_smarty_tpl->tpl_vars['conf']->value->app_root; ?>
 ">
-                    <img src="<?php echo $_smarty_tpl->tpl_vars['conf']->value->app_url; ?>
-/assets/images/logo.png" alt="logo" width="200" height="125">
+                    <img alt="logo" height="125" src="<?php echo $_smarty_tpl->tpl_vars['conf']->value->app_url; ?>
+/assets/images/logo.png" width="200">
                 </a>
                 <button class="navbar-toggler ms-auto" type="button" data-bs-toggle="collapse" data-bs-target="#n_bar"
                         aria-controls="navbarNavAltMarkup" aria-label="Toggle navigation">
@@ -106,44 +106,46 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array(
         <!-- CONTENT -->
         <main id="main">
             <?php
-            $_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_14937173236492039055c079_45652410', 'content');
+            $_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_162880123364935952b0c720_46850448', 'content');
             ?>
 
         </main>
 
         <!-- FOOTER -->
-        <footer id="aboutusfooter">
-            <div class="container">
-                <div class="row">
-                    <div class="col-sm">
-                        <h5><b>INFORMACJE</b></h5>
-                        <p><a href="<?php echo $_smarty_tpl->tpl_vars['conf']->value->app_root; ?>
+        <footer class="mt-auto">
+            <footer id="aboutusfooter">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-sm">
+                            <h5><b>INFORMACJE</b></h5>
+                            <p><a href="<?php echo $_smarty_tpl->tpl_vars['conf']->value->app_root; ?>
 " id="flinks">Strona główna</a></p>
-                        <p><a href="<?php echo $_smarty_tpl->tpl_vars['conf']->value->app_root; ?>
+                            <p><a href="<?php echo $_smarty_tpl->tpl_vars['conf']->value->app_root; ?>
 /bouquet" id="flinks">Bukiety</a></p>
-                        <p><a href="<?php echo $_smarty_tpl->tpl_vars['conf']->value->app_root; ?>
+                            <p><a href="<?php echo $_smarty_tpl->tpl_vars['conf']->value->app_root; ?>
 /flowers" id="flinks">Skomponuj swój własny bukiet</a></p>
-                        <p><a href="<?php echo $_smarty_tpl->tpl_vars['conf']->value->app_root; ?>
+                            <p><a href="<?php echo $_smarty_tpl->tpl_vars['conf']->value->app_root; ?>
 /loginShow" id="flinks">Zamów kwiaty</a></p>
-                    </div>
-                    <div class="col-sm">
-                        <h5><b>GODZINY OTWARCIA</b></h5>
-                        <p><b>Poniedziałek – piątek:</b> 9:00-20:00</p>
-                        <p><b>Sobota:</b> 9:00-18:00</p>
-                        <p><b>Niedziela:</b> 9:00-16:00</p>
-                    </div>
-                    <div class="col-sm">
-                        <h5><b>KWIACIARNIA LAWENDOWE POLE</b></h5>
-                        <p>Wyszyńskiego 71</p>
-                        <p>42-600 Tarnowskie Góry</p>
-                        <p>+48 724 822 911</p>
-                        <p>lawendowepole@gmail.com</p>
+                        </div>
+                        <div class="col-sm">
+                            <h5><b>GODZINY OTWARCIA</b></h5>
+                            <p><b>Poniedziałek – piątek:</b> 9:00-20:00</p>
+                            <p><b>Sobota:</b> 9:00-18:00</p>
+                            <p><b>Niedziela:</b> 9:00-16:00</p>
+                        </div>
+                        <div class="col-sm">
+                            <h5><b>KWIACIARNIA LAWENDOWE POLE</b></h5>
+                            <p>Wyszyńskiego 71</p>
+                            <p>42-600 Tarnowskie Góry</p>
+                            <p>+48 724 822 911</p>
+                            <p>lawendowepole@gmail.com</p>
+                        </div>
                     </div>
                 </div>
-            </div>
-        </footer>
-        <footer id="creditsfooter" class="footer">
-            <p class="text-end">Design: Aleksandra Kopacz</p>
+            </footer>
+            <footer id="creditsfooter" class="footer">
+                <p class="text-end">Design: Aleksandra Kopacz</p>
+            </footer>
         </footer>
         <!-- JS -->
         <?php echo '<script'; ?>
@@ -157,12 +159,12 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array(
 
     /* {block 'content'} */
 
-    class Block_14937173236492039055c079_45652410 extends Smarty_Internal_Block
+    class Block_162880123364935952b0c720_46850448 extends Smarty_Internal_Block
     {
         public $subBlocks = array(
             'content' =>
                 array(
-                    0 => 'Block_14937173236492039055c079_45652410',
+                    0 => 'Block_162880123364935952b0c720_46850448',
                 ),
         );
 

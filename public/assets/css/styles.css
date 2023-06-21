@@ -44,6 +44,16 @@ a:active.dropdown-item {
   background-color: #F7E7FB;
 }
 
+.user-control {
+  border: none;
+  border-bottom: 2px solid #E0C2F2;
+}
+
+#errorMsg {
+  list-style: none;
+  color: #B270A9;
+}
+
 /* Footer */
 #aboutusfooter {
   background-color: #F7E7FB;
@@ -68,7 +78,6 @@ a:hover#flinks {
     border: none;
   }
 }
-
 /* Assets */
 img {
   pointer-events: none;
