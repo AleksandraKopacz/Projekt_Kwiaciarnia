@@ -15,3 +15,4 @@ Utils::addRoute('logout', 'LoginCtrl');
 Utils::addRoute('loginShow', 'LoginCtrl');
 Utils::addRoute('edit', 'EditCtrl', ['1']);
 Utils::addRoute('register', 'RegisterCtrl');
+Utils::addRoute('registerShow', 'RegisterCtrl');
