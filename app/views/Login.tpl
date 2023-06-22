@@ -31,8 +31,8 @@
                             </div>
                         {/if}
                     </div>
+                </form>
             </div>
-            </form>
         </div>
     </div>
 {/block}

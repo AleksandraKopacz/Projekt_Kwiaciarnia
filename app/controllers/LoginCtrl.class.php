@@ -6,6 +6,7 @@ use core\App;
 use core\ParamUtils;
 use app\forms\LoginForm;
 use core\RoleUtils;
+use core\SessionUtils;
 use core\Utils;
 
 class LoginCtrl
@@ -35,7 +36,7 @@ class LoginCtrl
             if (RoleUtils::inRole('1')) {
                 App::getRouter()->redirectTo('edit');
             } elseif (RoleUtils::inRole('0')) {
-                App::getRouter()->redirectTo('order');
+                App::getRouter()->redirectTo('orderView');
             }
         } else {
             $this->generateView();
@@ -70,6 +71,7 @@ class LoginCtrl
                 App::getRouter()->redirectTo("edit");
             } elseif (implode(",", $this->form->user) == 0) {
                 RoleUtils::addRole('0');
+                SessionUtils::store($emailaddress, $this->form->login);
                 App::getRouter()->redirectTo("order");
             }
         } else {
