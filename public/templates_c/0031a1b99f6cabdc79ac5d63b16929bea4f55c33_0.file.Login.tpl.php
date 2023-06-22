@@ -1,25 +1,25 @@
 <?php
-/* Smarty version 4.3.0, created on 2023-06-21 22:23:07
+/* Smarty version 4.3.0, created on 2023-06-22 12:40:59
   from 'C:\xampp\htdocs\Kwiaciarnia\app\views\Login.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array(
     'version' => '4.3.0',
-    'unifunc' => 'content_64935c2b3123c8_87511956',
+    'unifunc' => 'content_6494253befb668_38214925',
     'has_nocache_code' => false,
     'file_dependency' =>
         array(
             '0031a1b99f6cabdc79ac5d63b16929bea4f55c33' =>
                 array(
                     0 => 'C:\\xampp\\htdocs\\Kwiaciarnia\\app\\views\\Login.tpl',
-                    1 => 1687378859,
+                    1 => 1687429880,
                     2 => 'file',
                 ),
         ),
     'includes' =>
         array(),
 ), false)) {
-    function content_64935c2b3123c8_87511956(Smarty_Internal_Template $_smarty_tpl)
+    function content_6494253befb668_38214925(Smarty_Internal_Template $_smarty_tpl)
     {
         $_smarty_tpl->_loadInheritance();
         $_smarty_tpl->inheritance->init($_smarty_tpl, true);
@@ -27,18 +27,18 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array(
 
 
         <?php
-        $_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_92016290264935c2b2fe694_29924024', "content");
+        $_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_4176282146494253beeabf9_34491904', "content");
         $_smarty_tpl->inheritance->endChild($_smarty_tpl, "main.html");
     }
 
     /* {block "content"} */
 
-    class Block_92016290264935c2b2fe694_29924024 extends Smarty_Internal_Block
+    class Block_4176282146494253beeabf9_34491904 extends Smarty_Internal_Block
     {
         public $subBlocks = array(
             'content' =>
                 array(
-                    0 => 'Block_92016290264935c2b2fe694_29924024',
+                    0 => 'Block_4176282146494253beeabf9_34491904',
                 ),
         );
 
@@ -85,8 +85,8 @@ login" method="post">
                                     </div>
                                 <?php } ?>
                             </div>
+                        </form>
                     </div>
-                    </form>
                 </div>
             </div>
             <?php

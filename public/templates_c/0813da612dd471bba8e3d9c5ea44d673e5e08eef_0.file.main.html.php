@@ -1,25 +1,25 @@
 <?php
-/* Smarty version 4.3.0, created on 2023-06-21 22:10:58
+/* Smarty version 4.3.0, created on 2023-06-22 11:30:29
   from 'C:\xampp\htdocs\Kwiaciarnia\app\views\templates\main.html' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array(
     'version' => '4.3.0',
-    'unifunc' => 'content_64935952b0fb61_29721352',
+    'unifunc' => 'content_649414b57277e1_42375597',
     'has_nocache_code' => false,
     'file_dependency' =>
         array(
             '0813da612dd471bba8e3d9c5ea44d673e5e08eef' =>
                 array(
                     0 => 'C:\\xampp\\htdocs\\Kwiaciarnia\\app\\views\\templates\\main.html',
-                    1 => 1687378247,
+                    1 => 1687379542,
                     2 => 'file',
                 ),
         ),
     'includes' =>
         array(),
 ), false)) {
-    function content_64935952b0fb61_29721352(Smarty_Internal_Template $_smarty_tpl)
+    function content_649414b57277e1_42375597(Smarty_Internal_Template $_smarty_tpl)
     {
         $_smarty_tpl->_loadInheritance();
         $_smarty_tpl->inheritance->init($_smarty_tpl, false);
@@ -106,7 +106,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array(
         <!-- CONTENT -->
         <main id="main">
             <?php
-            $_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_162880123364935952b0c720_46850448', 'content');
+            $_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_253174007649414b5721432_44967324', 'content');
             ?>
 
         </main>
@@ -143,7 +143,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array(
                     </div>
                 </div>
             </footer>
-            <footer id="creditsfooter" class="footer">
+            <footer class="footer" id="creditsfooter">
                 <p class="text-end">Design: Aleksandra Kopacz</p>
             </footer>
         </footer>
@@ -159,12 +159,12 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array(
 
     /* {block 'content'} */
 
-    class Block_162880123364935952b0c720_46850448 extends Smarty_Internal_Block
+    class Block_253174007649414b5721432_44967324 extends Smarty_Internal_Block
     {
         public $subBlocks = array(
             'content' =>
                 array(
-                    0 => 'Block_162880123364935952b0c720_46850448',
+                    0 => 'Block_253174007649414b5721432_44967324',
                 ),
         );
 
