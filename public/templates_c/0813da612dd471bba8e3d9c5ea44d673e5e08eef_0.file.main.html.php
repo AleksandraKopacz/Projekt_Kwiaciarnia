@@ -1,25 +1,25 @@
 <?php
-/* Smarty version 4.3.0, created on 2023-06-22 11:30:29
+/* Smarty version 4.3.0, created on 2023-06-24 22:22:25
   from 'C:\xampp\htdocs\Kwiaciarnia\app\views\templates\main.html' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array(
     'version' => '4.3.0',
-    'unifunc' => 'content_649414b57277e1_42375597',
+    'unifunc' => 'content_64975081882154_65040168',
     'has_nocache_code' => false,
     'file_dependency' =>
         array(
             '0813da612dd471bba8e3d9c5ea44d673e5e08eef' =>
                 array(
                     0 => 'C:\\xampp\\htdocs\\Kwiaciarnia\\app\\views\\templates\\main.html',
-                    1 => 1687379542,
+                    1 => 1687638144,
                     2 => 'file',
                 ),
         ),
     'includes' =>
         array(),
 ), false)) {
-    function content_649414b57277e1_42375597(Smarty_Internal_Template $_smarty_tpl)
+    function content_64975081882154_65040168(Smarty_Internal_Template $_smarty_tpl)
     {
         $_smarty_tpl->_loadInheritance();
         $_smarty_tpl->inheritance->init($_smarty_tpl, false);
@@ -106,7 +106,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array(
         <!-- CONTENT -->
         <main id="main">
             <?php
-            $_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_253174007649414b5721432_44967324', 'content');
+            $_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_19334177876497508187efc5_26057359', 'content');
             ?>
 
         </main>
@@ -153,18 +153,25 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array(
         integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe"
         crossorigin="anonymous"><?php echo '</script'; ?>
         >
+        <?php echo '<script'; ?>
+        src="https://code.jquery.com/jquery-3.7.0.min.js"><?php echo '</script'; ?>
+        >
+        <?php echo '<script'; ?>
+        src="<?php echo $_smarty_tpl->tpl_vars['conf']->value->app_url; ?>
+        /assets/js/functions.js"><?php echo '</script'; ?>
+        >
         </body>
         </html>
     <?php }
 
     /* {block 'content'} */
 
-    class Block_253174007649414b5721432_44967324 extends Smarty_Internal_Block
+    class Block_19334177876497508187efc5_26057359 extends Smarty_Internal_Block
     {
         public $subBlocks = array(
             'content' =>
                 array(
-                    0 => 'Block_253174007649414b5721432_44967324',
+                    0 => 'Block_19334177876497508187efc5_26057359',
                 ),
         );
 

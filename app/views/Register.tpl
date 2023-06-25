@@ -19,17 +19,7 @@
                     <div class="text-center">
                         <input type="submit" value="Zarejestruj się" id="submitFilterButton">
                         <p><a href="{$conf->app_root}/loginShow" id="flinks">Zaloguj się</a></p>
-                        {if $msgs->isMessage()}
-                            <div>
-                                <ul id="errorMsg">
-                                    {foreach $msgs->getMessages() as $msg}
-                                        {strip}
-                                            <li>{$msg->text}</li>
-                                        {/strip}
-                                    {/foreach}
-                                </ul>
-                            </div>
-                        {/if}
+                        {include file="Msg.tpl"}
                     </div>
                 </form>
             </div>
