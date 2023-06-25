@@ -6,7 +6,7 @@
             <div class="row align-items-start">
                 <div class="col-sm-5">
                     <label class="form-label" for="priceTo">Cena do:</label>
-                    <input class="form-control" name="priceTo" id="priceTo" type="number" placeholder="{$maxPrice}"
+                    <input class="form-control" name="priceTo" id="priceTo" type="number"
                            value="{$searchForm->to}"
                            min="{$minPrice}" max="{$maxPrice}">
                 </div>
@@ -24,6 +24,13 @@
                 <div class="col-sm-2" id="submitFilter">
                     <input type="submit" value="Filtruj" id="submitFilterButton">
                 </div>
+            </div>
+            <div class="row">
+                {for $p=1 to $pageNumber}
+                    <div class="col">
+                        <input type="submit" value="{$p}" name="page" id="submitFilterButton">
+                    </div>
+                {/for}
             </div>
         </div>
     </form>

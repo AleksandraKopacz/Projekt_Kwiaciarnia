@@ -19,7 +19,8 @@
                                            required>
                                 </div>
                                 <div class="text-center">
-                                    <input type="submit" value="Usuń" id="submitFilterButton">
+                                    <input type="submit"
+                                           value="Usuń" id="submitFilterButton">
                                 </div>
                             </form>
                         </div>

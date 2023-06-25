@@ -13,15 +13,26 @@ class BouquetCtrl
     public $maxPrice;
     public $minPrice;
     public $form;
+    public $page;
+    public $o;
+    public $max;
+    public $pageNumber;
 
     public function __construct()
     {
         $this->form = new FlowersSearch();
+        $this->max = 3;
+        $this->page = 0;
     }
 
     public function action_bouquet()
     {
+        $this->countPages();
         $this->getParams();
+        if ($this->page < 1)
+            $this->page = 1;
+        $this->page = --$this->page;
+        $this->o = $this->max * $this->page;
 
         $search_params = [];
 
@@ -41,6 +52,7 @@ class BouquetCtrl
         }
 
         $where ["ORDER"] = "cena_uslugi";
+        $where ["LIMIT"] = [$this->o, $this->max];
 
         $this->records = App::getDB()->select("uslugi", [
             "img",
@@ -58,17 +70,31 @@ class BouquetCtrl
 
         $this->minPrice = App::getDB()->min("uslugi", "cena_uslugi");
 
-        App::getSmarty()->assign('minPrice', $this->minPrice);
-        App::getSmarty()->assign('maxPrice', $this->maxPrice);
-        App::getSmarty()->assign('types', $this->types);
-        App::getSmarty()->assign('usluga', $this->records);
-        App::getSmarty()->assign("page_title", "Pełna oferta bukietów");
-        App::getSmarty()->display("Bouquet.tpl");
+        $this->generateView();
     }
 
     public function getParams()
     {
         $this->form->to = ParamUtils::getFromRequest('priceTo');
         $this->form->type = ParamUtils::getFromRequest('type');
+        $this->page = ParamUtils::getFromRequest('page');
+    }
+
+    public function countPages()
+    {
+        $this->pageNumber = App::getDB()->count("uslugi");
+        $this->pageNumber = $this->pageNumber / $this->max;
+    }
+
+    public function generateView()
+    {
+        App::getSmarty()->assign('pageNumber', $this->pageNumber);
+        App::getSmarty()->assign('page', $this->page);
+        App::getSmarty()->assign('minPrice', $this->minPrice);
+        App::getSmarty()->assign('maxPrice', $this->maxPrice);
+        App::getSmarty()->assign('types', $this->types);
+        App::getSmarty()->assign('usluga', $this->records);
+        App::getSmarty()->assign("page_title", "Pełna oferta bukietów");
+        App::getSmarty()->display("Bouquet.tpl");
     }
 }

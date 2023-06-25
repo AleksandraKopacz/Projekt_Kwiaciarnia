@@ -7,7 +7,6 @@ App::getRouter()->setDefaultRoute('homepage'); #default action
 App::getRouter()->setLoginRoute('login'); #action to forward if no permissions
 
 Utils::addRoute('homepage', 'HomepageCtrl');
-Utils::addRoute('flowers', 'FlowersCtrl');
 Utils::addRoute('bouquet', 'BouquetCtrl');
 Utils::addRoute('login', 'LoginCtrl');
 Utils::addRoute('logout', 'LoginCtrl');
