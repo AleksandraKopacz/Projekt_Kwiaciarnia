@@ -11,8 +11,6 @@ class EditCtrl
 {
     private $form;
     private $records;
-    public $minValue;
-    public $maxValue;
 
     public function __construct()
     {
@@ -46,26 +44,6 @@ class EditCtrl
         App::getSmarty()->display("TableContentPart.tpl");
     }
 
-    public function action_add()
-    {
-        $this->generateView();
-        App::getSmarty()->display("AddContent.tpl");
-    }
-
-    public function action_showAdd()
-    {
-        $this->getParams();
-        if ($this->form->tableName == 'zamowienie') {
-            $this->maxValue = App::getDB()->max("uzytkownik", "id_uzytkownik");
-            $this->minValue = App::getDB()->min("uzytkownik", "id_uzytkownik");
-            App::getSmarty()->assign('maxValue', $this->maxValue);
-            App::getSmarty()->assign('minValue', $this->minValue);
-        }
-        $this->generateView();
-        App::getSmarty()->display("AddContent.tpl");
-
-    }
-
     public function generateView()
     {
         App::getSmarty()->assign('form', $this->form);
@@ -73,7 +51,7 @@ class EditCtrl
         App::getSmarty()->assign("page_title", "Edytuj bazę danych");
     }
 
-    //USLUGI
+    //USLUGI - ADD
     public function action_addUslugiShow()
     {
         $this->generateAddUslugiView();
@@ -108,5 +86,156 @@ class EditCtrl
         App::getSmarty()->assign('records', $this->records);
         App::getSmarty()->assign("page_title", "Edytuj bazę danych");
         App::getSmarty()->display('AddUslugi.tpl');
+    }
+
+    //USLUGI - DELETE
+    public function action_deleteUslugiShow()
+    {
+        $this->generateDeleteUslugiView();
+    }
+
+    public function action_deleteUslugi()
+    {
+        $this->form->id_uslugi = ParamUtils::getFromRequest('id_uslugi');
+        $this->form->table = App::getDB()->get("uslugi", "*", ["id_uslugi" => $this->form->id_uslugi]);
+        if (!empty($this->form->table)) {
+            $this->form->table = App::getDB()->delete("uslugi", [
+                "id_uslugi" => $this->form->id_uslugi
+            ]);
+            Utils::addInfoMessage('Usunięto z bazy danych');
+        } else {
+            Utils::addErrorMessage('Taki rekord nie istnieje');
+        }
+        $this->generateDeleteUslugiView();
+    }
+
+    public function generateDeleteUslugiView()
+    {
+        App::getSmarty()->assign('form', $this->form);
+        App::getSmarty()->assign('records', $this->records);
+        App::getSmarty()->assign("page_title", "Edytuj bazę danych");
+        App::getSmarty()->display('DeleteUslugi.tpl');
+    }
+
+    //UZYTKOWNIK - ADD
+    public function action_addUzytkownikShow()
+    {
+        $this->generateAddUzytkownikView();
+    }
+
+    public function action_addUzytkownik()
+    {
+        $this->form->email = ParamUtils::getFromRequest('email');
+        $this->form->haslo = ParamUtils::getFromRequest('haslo');
+        $this->form->rola = ParamUtils::getFromRequest('rola');
+        $this->form->table = App::getDB()->get("uzytkownik", "*", ["email" => $this->form->email]);
+        if (empty($this->form->table)) {
+            $this->form->table = App::getDB()->insert("uzytkownik", [
+                "email" => $this->form->email,
+                "haslo" => $this->form->haslo,
+                "rola" => $this->form->rola
+            ]);
+            Utils::addInfoMessage('Dodano do bazy danych');
+        } else {
+            Utils::addErrorMessage('Taki rekord już istnieje');
+        }
+        $this->generateAddUzytkownikView();
+    }
+
+    public function generateAddUzytkownikView()
+    {
+        App::getSmarty()->assign('form', $this->form);
+        App::getSmarty()->assign('records', $this->records);
+        App::getSmarty()->assign("page_title", "Edytuj bazę danych");
+        App::getSmarty()->display('AddUzytkownik.tpl');
+    }
+
+    //UZYTKOWNIK - DELETE
+    public function action_deleteUzytkownikShow()
+    {
+        $this->generateDeleteUzytkownikView();
+    }
+
+    public function action_deleteUzytkownik()
+    {
+        $this->form->id_uzytkownik = ParamUtils::getFromRequest('id_uzytkownik');
+        $this->form->table = App::getDB()->get("uslugi", "*", ["id_uzytkownik" => $this->form->id_uzytkownik]);
+        if (!empty($this->form->table)) {
+            $this->form->table = App::getDB()->delete("uzytkownik", [
+                "id_uzytkownik" => $this->form->id_uzytkownik
+            ]);
+            Utils::addInfoMessage('Usunięto z bazy danych');
+        } else {
+            Utils::addErrorMessage('Taki rekord nie istnieje');
+        }
+        $this->generateDeleteUslugiView();
+    }
+
+    public function generateDeleteUzytkownikView()
+    {
+        App::getSmarty()->assign('form', $this->form);
+        App::getSmarty()->assign('records', $this->records);
+        App::getSmarty()->assign("page_title", "Edytuj bazę danych");
+        App::getSmarty()->display('DeleteUzytkownik.tpl');
+    }
+
+    //ZAMOWIENIE - ADD
+    public function action_addZamowienieShow()
+    {
+        $this->generateAddZamowienieView();
+    }
+
+    public function action_addZamowienie()
+    {
+        $this->form->szczegoly = ParamUtils::getFromRequest('szczegoly');
+        $this->form->id_uzytkownik = ParamUtils::getFromRequest('id_uzytkownik');
+        $this->form->table = App::getDB()->get("uzytkownik", "*", ["id_uzytkownik" => $this->form->id_uzytkownik]);
+        if (!empty($this->form->table)) {
+            $this->form->table = App::getDB()->insert("zamowienie", [
+                "szczegoly" => $this->form->szczegoly,
+                "id_uzytkownik" => $this->form->id_uzytkownik
+            ]);
+            Utils::addInfoMessage('Dodano do bazy danych');
+        } else {
+            Utils::addErrorMessage('Użytkownik o takim id nie istnieje');
+        }
+        $this->generateAddZamowienieView();
+    }
+
+    public function generateAddZamowienieView()
+    {
+        App::getSmarty()->assign('form', $this->form);
+        App::getSmarty()->assign('records', $this->records);
+        App::getSmarty()->assign("page_title", "Edytuj bazę danych");
+        App::getSmarty()->display('AddZamowienie.tpl');
+    }
+
+    //ZAMOWIENIE - DELETE
+    public function action_deleteZamowienieShow()
+    {
+        $this->generateDeleteZamowienieView();
+    }
+
+    public function action_deleteZamowienie()
+    {
+        $this->form->id_zamowienie = ParamUtils::getFromRequest('id_zamowienie');
+        $this->form->table = App::getDB()->get("zamowienie", "*", ["id_zamowienie" => $this->form->id_zamowienie]);
+        if (!empty($this->form->table)) {
+            $this->form->table = App::getDB()->delete("zamowienie", [
+                "id_zamowienie" => $this->form->id_zamowienie
+            ]);
+            Utils::addInfoMessage('Usunięto z bazy danych');
+        } else {
+            Utils::addErrorMessage('Taki rekord nie istnieje');
+        }
+        $this->generateDeleteZamowienieView();
+    }
+
+    public function generateDeleteZamowienieView()
+    {
+        App::getSmarty()->assign('form', $this->form);
+        App::getSmarty()->assign('records', $this->records);
+        App::getSmarty()->assign("page_title", "Edytuj bazę danych");
+        App::getSmarty()->display('DeleteZamowienie.tpl');
     }
 }

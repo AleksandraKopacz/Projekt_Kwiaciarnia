@@ -1,25 +1,25 @@
 <?php
-/* Smarty version 4.3.0, created on 2023-06-24 22:22:25
+/* Smarty version 4.3.0, created on 2023-06-25 17:38:40
   from 'C:\xampp\htdocs\Kwiaciarnia\app\views\templates\main.html' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array(
     'version' => '4.3.0',
-    'unifunc' => 'content_64975081882154_65040168',
+    'unifunc' => 'content_64985f80e408e4_63654504',
     'has_nocache_code' => false,
     'file_dependency' =>
         array(
             '0813da612dd471bba8e3d9c5ea44d673e5e08eef' =>
                 array(
                     0 => 'C:\\xampp\\htdocs\\Kwiaciarnia\\app\\views\\templates\\main.html',
-                    1 => 1687638144,
+                    1 => 1687706934,
                     2 => 'file',
                 ),
         ),
     'includes' =>
         array(),
 ), false)) {
-    function content_64975081882154_65040168(Smarty_Internal_Template $_smarty_tpl)
+    function content_64985f80e408e4_63654504(Smarty_Internal_Template $_smarty_tpl)
     {
         $_smarty_tpl->_loadInheritance();
         $_smarty_tpl->inheritance->init($_smarty_tpl, false);
@@ -106,7 +106,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array(
         <!-- CONTENT -->
         <main id="main">
             <?php
-            $_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_19334177876497508187efc5_26057359', 'content');
+            $_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_13692641464985f80e3c804_12391487', 'content');
             ?>
 
         </main>
@@ -166,12 +166,12 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array(
 
     /* {block 'content'} */
 
-    class Block_19334177876497508187efc5_26057359 extends Smarty_Internal_Block
+    class Block_13692641464985f80e3c804_12391487 extends Smarty_Internal_Block
     {
         public $subBlocks = array(
             'content' =>
                 array(
-                    0 => 'Block_19334177876497508187efc5_26057359',
+                    0 => 'Block_13692641464985f80e3c804_12391487',
                 ),
         );
 

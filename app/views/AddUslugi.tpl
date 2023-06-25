@@ -8,7 +8,7 @@
                 <div class="container py-5 h-100" style="margin-top: 1em; margin-bottom: 1em;">
                     <div class="row d-flex justify-content-center align-items-center h-100">
                         <div class="col-12 col-md-8 col-lg-6 col-xl-5">
-                            <h1>Dodaj do usług</h1>
+                            <h1>Dodaj usługę</h1>
                             {include file="Msg.tpl"}
                             <form action="{$conf->action_root}addUslugi" method="post">
                                 <div class="form-outline mb-4">
