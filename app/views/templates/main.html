@@ -37,12 +37,19 @@
                 <li>
                     <a class="nav-link" href="{$conf->app_root}/bouquet">Bukiety</a>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="{$conf->app_root}/order">Zamów kwiaty</a>
-                </li>
+                {if \core\RoleUtils::inRole('1')}
                 <li class="nav-item">
                     <a class="nav-link" href="{$conf->app_root}/edit">Narzędzia dla administratora</a>
                 </li>
+                {elseif \core\RoleUtils::inRole('0')}
+                <li class="nav-item">
+                    <a class="nav-link" href="{$conf->app_root}/orderView">Zamów kwiaty</a>
+                </li>
+                {else}
+                <li class="nav-item">
+                    <a class="nav-link" href="{$conf->app_root}/loginShow">Zaloguj się</a>
+                </li>
+                {/if}
             </ul>
             <span class="navbar-text">
         <i class="fa fa-phone"></i> +48 724 822 911
@@ -65,7 +72,13 @@
                     <h5><b>INFORMACJE</b></h5>
                     <p><a href="{$conf->app_root}" id="flinks">Strona główna</a></p>
                     <p><a href="{$conf->app_root}/bouquet" id="flinks">Bukiety</a></p>
-                    <p><a href="{$conf->app_root}/loginShow" id="flinks">Zamów kwiaty</a></p>
+                    {if \core\RoleUtils::inRole('1')}
+                    <p><a href="{$conf->app_root}/edit" id="flinks">Narzędzia dla administratora</a></p>
+                    {elseif \core\RoleUtils::inRole('0')}
+                    <p><a href="{$conf->app_root}/orderView" id="flinks">Zamów kwiaty</a></p>
+                    {else}
+                    <p><a href="{$conf->app_root}/loginShow" id="flinks">Zaloguj się</a></p>
+                    {/if}
                 </div>
                 <div class="col-sm">
                     <h5><b>GODZINY OTWARCIA</b></h5>

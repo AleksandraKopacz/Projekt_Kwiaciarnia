@@ -7,6 +7,7 @@ class DatabaseSearch
     public $tableName;
     public $id;
     public $table;
+    public $filter;
     //USLUGI
     public $id_uslugi;
     public $img;

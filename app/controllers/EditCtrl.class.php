@@ -20,7 +20,25 @@ class EditCtrl
     public function load_data()
     {
         $this->form->tableName = ParamUtils::getFromRequest('tableName');
-        $where = "id_" . $this->form->tableName;
+        $this->form->filter = ParamUtils::getFromRequest('filter');
+        $search_params = [];
+        if(isset($this->form->filter) && strlen($this->form->filter) > 0)
+        {
+            if($this->form->tableName == 'uslugi')
+                $search_params['usluga[~]'] = '%' . $this->form->filter . '%';
+            if($this->form->tableName == 'uzytkownik')
+                $search_params['email[~]'] = '%' . $this->form->filter . '%';
+            if($this->form->tableName == 'zamowienie')
+                $search_params['szczegoly[~]'] = '%' . $this->form->filter . '%';
+        }
+        $num_params = sizeof($search_params);
+        if($num_params > 1)
+        {
+            $where = ["AND" => &$search_params];
+        } else {
+            $where = &$search_params;
+        }
+        $where ["ORDER"] = "id_" . $this->form->tableName;
         $this->records = App::getDB()->select($this->form->tableName, "*", $where);
         $this->generateTableView();
     }

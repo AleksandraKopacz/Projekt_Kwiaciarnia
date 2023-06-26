@@ -12,7 +12,9 @@
                         <option value="uslugi">Usługi</option>
                         <option value="uzytkownik">Użytkownik</option>
                         <option value="zamowienie">Zamówienie</option>
-                    </select>
+                    </select><br />
+                    <label for="filter">&#128269;</label>
+                    <input type="text" name="filter" value="{$form->filter}" />
                     <br/><input type="submit" value="Pokaż tabelę" id="submitFilterButton">
                 </form>
                 <div id="tableContent">
