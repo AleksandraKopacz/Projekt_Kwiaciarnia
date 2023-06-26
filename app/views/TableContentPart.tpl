@@ -52,6 +52,7 @@
         <th>id_zamowienie</th>
         <th>szczegoly</th>
         <th>id_uzytkownik</th>
+        <th>email</th>
     </tr>
     </thead>
     <tbody>
@@ -61,6 +62,7 @@
                 <td>{$r["id_zamowienie"]}</td>
                 <td>{$r["szczegoly"]}</td>
                 <td>{$r["id_uzytkownik"]}</td>
+                <td>{$r["email"]}</td>
             </tr>
         {/strip}
     {/foreach}

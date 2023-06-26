@@ -13,7 +13,7 @@
                         <option value="uzytkownik">Użytkownik</option>
                         <option value="zamowienie">Zamówienie</option>
                     </select><br />
-                    <label for="filter">&#128269;</label>
+                    <label for="filter">Filtruj</label>
                     <input type="text" name="filter" value="{$form->filter}" />
                     <br/><input type="submit" value="Pokaż tabelę" id="submitFilterButton">
                 </form>

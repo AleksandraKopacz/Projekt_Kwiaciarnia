@@ -21,6 +21,7 @@ class EditCtrl
     {
         $this->form->tableName = ParamUtils::getFromRequest('tableName');
         $this->form->filter = ParamUtils::getFromRequest('filter');
+
         $search_params = [];
         if(isset($this->form->filter) && strlen($this->form->filter) > 0)
         {
@@ -31,6 +32,7 @@ class EditCtrl
             if($this->form->tableName == 'zamowienie')
                 $search_params['szczegoly[~]'] = '%' . $this->form->filter . '%';
         }
+
         $num_params = sizeof($search_params);
         if($num_params > 1)
         {
@@ -38,8 +40,20 @@ class EditCtrl
         } else {
             $where = &$search_params;
         }
+
         $where ["ORDER"] = "id_" . $this->form->tableName;
-        $this->records = App::getDB()->select($this->form->tableName, "*", $where);
+        if($this->form->tableName == 'zamowienie') {
+            $this->records = App::getDB()->select($this->form->tableName, [
+                "[>]uzytkownik" => ["id_uzytkownik" => "id_uzytkownik"]
+            ], [
+                "zamowienie.id_zamowienie",
+                "zamowienie.szczegoly",
+                "zamowienie.id_uzytkownik",
+                "uzytkownik.email"
+            ], $where);
+        } else {
+            $this->records = App::getDB()->select($this->form->tableName, "*", $where);
+        }
         $this->generateTableView();
     }
 

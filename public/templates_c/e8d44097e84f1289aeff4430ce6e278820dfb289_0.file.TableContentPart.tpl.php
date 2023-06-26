@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 4.3.0, created on 2023-06-26 12:39:37
+/* Smarty version 4.3.0, created on 2023-06-26 16:26:47
   from 'C:\xampp\htdocs\Kwiaciarnia\app\views\TableContentPart.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '4.3.0',
-  'unifunc' => 'content_64996ae966b122_50900109',
+  'unifunc' => 'content_6499a027db8ec5_75620395',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'e8d44097e84f1289aeff4430ce6e278820dfb289' => 
     array (
       0 => 'C:\\xampp\\htdocs\\Kwiaciarnia\\app\\views\\TableContentPart.tpl',
-      1 => 1687775973,
+      1 => 1687789605,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_64996ae966b122_50900109 (Smarty_Internal_Template $_smarty_tpl) {
+function content_6499a027db8ec5_75620395 (Smarty_Internal_Template $_smarty_tpl) {
 ?><table class="table table-sm table-hover" id="content">
     <thead>
     <!-- USLUGI -->
@@ -83,6 +83,7 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
         <th>id_zamowienie</th>
         <th>szczegoly</th>
         <th>id_uzytkownik</th>
+        <th>email</th>
     </tr>
     </thead>
     <tbody>
@@ -95,6 +96,7 @@ $_smarty_tpl->tpl_vars['r']->do_else = false;
         <tr><td><?php echo $_smarty_tpl->tpl_vars['r']->value["id_zamowienie"];?>
 </td><td><?php echo $_smarty_tpl->tpl_vars['r']->value["szczegoly"];?>
 </td><td><?php echo $_smarty_tpl->tpl_vars['r']->value["id_uzytkownik"];?>
+</td><td><?php echo $_smarty_tpl->tpl_vars['r']->value["email"];?>
 </td></tr>
     <?php
 }
