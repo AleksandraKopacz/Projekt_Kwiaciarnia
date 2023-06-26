@@ -38,6 +38,13 @@ class EditCtrl
         App::getSmarty()->display("TableContentPart.tpl");
     }
 
+    public function action_showTable()
+    {
+        $this->load_data();
+        $this->generateTableView();
+        App::getSmarty()->display("TableContentPart.tpl");
+    }
+
     public function generateTableView()
     {
         App::getSmarty()->assign('form', $this->form);

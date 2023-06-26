@@ -7,7 +7,7 @@
             <div class="col-10" style="border-left: 1px solid #E0C2F2;">
                 <h1>Przejrzyj bazę danych</h1>
                 <form id="search-form"
-                      onsubmit="ajaxPostForm('search-form','{$conf->action_root}table', 'tableContent'); return false;">
+                      onsubmit="ajaxPostForm('search-form','{$conf->action_root}showTable', 'tableContent'); return false;">
                     <select name="tableName" value="tableName">
                         <option value="uslugi">Usługi</option>
                         <option value="uzytkownik">Użytkownik</option>
