@@ -95,4 +95,15 @@ img {
   background-color: #F7E7FB;
 }
 
+/* Menu admin */
+.menu {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+.menuInside {
+  list-style-type: none;
+}
+
 /*# sourceMappingURL=styles.css.map */
