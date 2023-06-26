@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 4.3.0, created on 2023-06-26 11:27:19
+/* Smarty version 4.3.0, created on 2023-06-26 11:54:13
   from 'C:\xampp\htdocs\Kwiaciarnia\app\views\TableContent.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array(
     'version' => '4.3.0',
-    'unifunc' => 'content_649959f7817261_89271952',
+    'unifunc' => 'content_64996045cfde49_31940557',
     'has_nocache_code' => false,
     'file_dependency' =>
         array(
             '44255a06d5e9e21d559c7c31f94cdcd2f4a51042' =>
                 array(
                     0 => 'C:\\xampp\\htdocs\\Kwiaciarnia\\app\\views\\TableContent.tpl',
-                    1 => 1687771635,
+                    1 => 1687773252,
                     2 => 'file',
                 ),
         ),
@@ -22,7 +22,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array(
             'file:TableContentPart.tpl' => 1,
         ),
 ), false)) {
-    function content_649959f7817261_89271952(Smarty_Internal_Template $_smarty_tpl)
+    function content_64996045cfde49_31940557(Smarty_Internal_Template $_smarty_tpl)
     {
         $_smarty_tpl->_loadInheritance();
         $_smarty_tpl->inheritance->init($_smarty_tpl, true);
@@ -30,18 +30,18 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array(
 
 
         <?php
-        $_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_525100358649959f780aeb7_31765887', "content");
+        $_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_28819883564996045cf4fa9_41677420', "content");
         $_smarty_tpl->inheritance->endChild($_smarty_tpl, "main.html");
     }
 
     /* {block "content"} */
 
-    class Block_525100358649959f780aeb7_31765887 extends Smarty_Internal_Block
+    class Block_28819883564996045cf4fa9_41677420 extends Smarty_Internal_Block
     {
         public $subBlocks = array(
             'content' =>
                 array(
-                    0 => 'Block_525100358649959f780aeb7_31765887',
+                    0 => 'Block_28819883564996045cf4fa9_41677420',
                 ),
         );
 
@@ -57,7 +57,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array(
                         <h1>Przejrzyj bazę danych</h1>
                         <form id="search-form"
                               onsubmit="ajaxPostForm('search-form','<?php echo $_smarty_tpl->tpl_vars['conf']->value->action_root; ?>
-                                      showTable', 'tableContent'); return false;">
+                                      table', 'tableContent'); return false;">
                             <select name="tableName" value="tableName">
                                 <option value="uslugi">Usługi</option>
                                 <option value="uzytkownik">Użytkownik</option>

@@ -1,25 +1,25 @@
 <?php
-/* Smarty version 4.3.0, created on 2023-06-25 21:57:57
+/* Smarty version 4.3.0, created on 2023-06-26 12:05:13
   from 'C:\xampp\htdocs\Kwiaciarnia\app\views\templates\main.html' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array(
     'version' => '4.3.0',
-    'unifunc' => 'content_64989c45387d43_57610242',
+    'unifunc' => 'content_649962d9324454_51463965',
     'has_nocache_code' => false,
     'file_dependency' =>
         array(
             '0813da612dd471bba8e3d9c5ea44d673e5e08eef' =>
                 array(
                     0 => 'C:\\xampp\\htdocs\\Kwiaciarnia\\app\\views\\templates\\main.html',
-                    1 => 1687723075,
+                    1 => 1687773911,
                     2 => 'file',
                 ),
         ),
     'includes' =>
         array(),
 ), false)) {
-    function content_64989c45387d43_57610242(Smarty_Internal_Template $_smarty_tpl)
+    function content_649962d9324454_51463965(Smarty_Internal_Template $_smarty_tpl)
     {
         $_smarty_tpl->_loadInheritance();
         $_smarty_tpl->inheritance->init($_smarty_tpl, false);
@@ -73,16 +73,12 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array(
 /bouquet">Bukiety</a>
                         </li>
                         <li class="nav-item">
-                            <?php if ($_smarty_tpl->tpl_vars['conf']->value->roles == '0') { ?>
-                                <a class="nav-link" href="<?php echo $_smarty_tpl->tpl_vars['conf']->value->app_root; ?>
+                            <a class="nav-link" href="<?php echo $_smarty_tpl->tpl_vars['conf']->value->app_root; ?>
 /order">Zamów kwiaty</a>
-                            <?php } elseif ($_smarty_tpl->tpl_vars['conf']->value->roles == '1') { ?>
-                                <a class="nav-link" href="<?php echo $_smarty_tpl->tpl_vars['conf']->value->app_root; ?>
-/edit">Edytuj bazę danych</a>
-                            <?php } else { ?>
-                                <a class="nav-link" href="<?php echo $_smarty_tpl->tpl_vars['conf']->value->app_root; ?>
-/loginShow">Zamów kwiaty</a>
-                            <?php } ?>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="<?php echo $_smarty_tpl->tpl_vars['conf']->value->app_root; ?>
+/edit">Narzędzia dla administratora</a>
                         </li>
                     </ul>
                     <span class="navbar-text">
@@ -95,7 +91,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array(
         <!-- CONTENT -->
         <main id="main">
             <?php
-            $_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_75686986664989c453864e5_09685575', 'content');
+            $_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_2075595668649962d93217f5_65036343', 'content');
             ?>
 
         </main>
@@ -153,12 +149,12 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array(
 
     /* {block 'content'} */
 
-    class Block_75686986664989c453864e5_09685575 extends Smarty_Internal_Block
+    class Block_2075595668649962d93217f5_65036343 extends Smarty_Internal_Block
     {
         public $subBlocks = array(
             'content' =>
                 array(
-                    0 => 'Block_75686986664989c453864e5_09685575',
+                    0 => 'Block_2075595668649962d93217f5_65036343',
                 ),
         );
 

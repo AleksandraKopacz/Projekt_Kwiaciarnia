@@ -1,25 +1,25 @@
 <?php
-/* Smarty version 4.3.0, created on 2023-06-25 16:23:54
+/* Smarty version 4.3.0, created on 2023-06-26 11:59:36
   from 'C:\xampp\htdocs\Kwiaciarnia\app\views\TableContentPart.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array(
     'version' => '4.3.0',
-    'unifunc' => 'content_64984dfacf3d64_83749372',
+    'unifunc' => 'content_649961888d7159_56498146',
     'has_nocache_code' => false,
     'file_dependency' =>
         array(
             'e8d44097e84f1289aeff4430ce6e278820dfb289' =>
                 array(
                     0 => 'C:\\xampp\\htdocs\\Kwiaciarnia\\app\\views\\TableContentPart.tpl',
-                    1 => 1687703032,
+                    1 => 1687773568,
                     2 => 'file',
                 ),
         ),
     'includes' =>
         array(),
 ), false)) {
-    function content_64984dfacf3d64_83749372(Smarty_Internal_Template $_smarty_tpl)
+    function content_649961888d7159_56498146(Smarty_Internal_Template $_smarty_tpl)
     {
         ?>
         <table class="table table-sm table-hover" id="content">
