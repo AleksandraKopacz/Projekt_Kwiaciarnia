@@ -11,6 +11,7 @@ use core\Utils;
 class OrderCtrl
 {
     private $form;
+    private $tableCount;
 
     public function __construct()
     {
@@ -21,9 +22,11 @@ class OrderCtrl
     {
         $this->form->email = SessionUtils::load($emailaddress, $keep = true);
         $this->form->details = ParamUtils::getFromRequest('details');
-
+        $this->tableCount = App::getDB()->count("zamowienie");
         if (empty($this->form->details)) {
             Utils::addErrorMessage('Prosimy o wypełnienie szczegółów zamówienia');
+        } elseif ($this->tableCount >= 10) {
+            Utils::addErrorMessage('Obecnie mamy zbyt dużo zamówień, przepraszamy');
         } else {
             $where = ["email" => $this->form->email];
             $this->form->userid = App::getDB()->get("uzytkownik", [

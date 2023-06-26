@@ -14,25 +14,15 @@ class BouquetCtrl
     public $minPrice;
     public $form;
     public $page;
-    public $o;
-    public $max;
-    public $pageNumber;
 
     public function __construct()
     {
         $this->form = new FlowersSearch();
-        $this->max = 4;
-        $this->page = 0;
     }
 
     public function action_bouquet()
     {
-        $this->countPages();
         $this->getParams();
-        if ($this->page < 1)
-            $this->page = 1;
-        $this->page = --$this->page;
-        $this->o = $this->max * $this->page;
 
         $search_params = [];
 
@@ -52,7 +42,6 @@ class BouquetCtrl
         }
 
         $where ["ORDER"] = "cena_uslugi";
-        $where ["LIMIT"] = [$this->o, $this->max];
 
         $this->records = App::getDB()->select("uslugi", [
             "img",
@@ -77,19 +66,10 @@ class BouquetCtrl
     {
         $this->form->to = ParamUtils::getFromRequest('priceTo');
         $this->form->type = ParamUtils::getFromRequest('type');
-        $this->page = ParamUtils::getFromRequest('page');
-    }
-
-    public function countPages()
-    {
-        $this->pageNumber = App::getDB()->count("uslugi");
-        $this->pageNumber = $this->pageNumber / $this->max;
     }
 
     public function generateView()
     {
-        App::getSmarty()->assign('pageNumber', $this->pageNumber);
-        App::getSmarty()->assign('page', $this->page);
         App::getSmarty()->assign('minPrice', $this->minPrice);
         App::getSmarty()->assign('maxPrice', $this->maxPrice);
         App::getSmarty()->assign('types', $this->types);

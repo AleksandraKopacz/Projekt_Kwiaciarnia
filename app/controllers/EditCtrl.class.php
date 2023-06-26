@@ -174,7 +174,7 @@ class EditCtrl
                 "rola" => $this->form->rola
             ]);
             Utils::addInfoMessage('Dodano do bazy danych');
-        } elseif ($this->tableCount >=) {
+        } elseif ($this->tableCount >= 10) {
             Utils::addErrorMessage('W bazie danych jest już za dużo użytkowników, nie można dodać nowych');
         } else {
             Utils::addErrorMessage('Taki rekord już istnieje');

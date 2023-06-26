@@ -25,13 +25,6 @@
                     <input type="submit" value="Filtruj" id="submitFilterButton">
                 </div>
             </div>
-            <div class="row">
-                {for $p=1 to $pageNumber}
-                    <div class="col">
-                        <input type="submit" value="{$p}" name="page" id="submitFilterButton">
-                    </div>
-                {/for}
-            </div>
         </div>
     </form>
     <div class="container">

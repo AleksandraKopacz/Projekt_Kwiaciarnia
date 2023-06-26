@@ -10,6 +10,7 @@ use core\Utils;
 class RegisterCtrl
 {
     private $form;
+    private $tableCount;
 
     public function __construct()
     {
@@ -25,7 +26,7 @@ class RegisterCtrl
     {
         $this->form->login = ParamUtils::getFromRequest('login');
         $this->form->pass = ParamUtils::getFromRequest('pass');
-
+        $this->tableCount = App::getDB()->count("uzytkownik");
         if (!isset($this->form->login))
             return false;
         if (empty($this->form->login))
@@ -38,12 +39,14 @@ class RegisterCtrl
         $this->form->user = App::getDB()->get("uzytkownik", [
             "rola"
         ], $where);
-        if (empty($this->form->user)) {
+        if (empty($this->form->user) && $this->tableCount < 10) {
             $this->form->user = App::getDB()->insert("uzytkownik", [
                 "email" => $this->form->login,
                 "haslo" => $this->form->pass,
                 "rola" => 0
             ]);
+        } elseif ($table->count >= 10) {
+            Utils::addErrorMessage('Przykro mi, ale obecnie mamy zbyt dużo użytkowników, prosimy skontaktować się z administratorem lub spróbować później');
         } else {
             Utils::addErrorMessage('Użytkownik o takim adresie e-mail już istnieje');
         }
