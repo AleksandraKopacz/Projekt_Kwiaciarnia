@@ -13,13 +13,13 @@ Utils::addRoute('logout', 'LoginCtrl');
 Utils::addRoute('loginShow', 'LoginCtrl');
 Utils::addRoute('register', 'RegisterCtrl');
 Utils::addRoute('registerShow', 'RegisterCtrl');
-//USER
-Utils::addRoute('order', 'OrderCtrl', ['0']);
-Utils::addRoute('orderView', 'OrderCtrl', ['0']);
 //ADMIN
 Utils::addRoute('edit', 'EditCtrl', ['1']);
 Utils::addRoute('showTable', 'EditCtrl', ['1']);
 Utils::addRoute('showTablePart', 'EditCtrl', ['1']);
+//USER
+Utils::addRoute('order', 'OrderCtrl', ['0']);
+Utils::addRoute('orderView', 'OrderCtrl', ['0']);
 //ADD
 Utils::addRoute('addUslugi', 'EditCtrl', ['1']);
 Utils::addRoute('addUzytkownik', 'EditCtrl', ['1']);

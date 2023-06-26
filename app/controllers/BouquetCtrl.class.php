@@ -21,7 +21,7 @@ class BouquetCtrl
     public function __construct()
     {
         $this->form = new FlowersSearch();
-        $this->max = 3;
+        $this->max = 4;
         $this->page = 0;
     }
 

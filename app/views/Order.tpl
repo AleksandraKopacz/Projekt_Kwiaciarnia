@@ -21,17 +21,7 @@
                         <input type="submit" value="Zamów" id="submitFilterButton">
                         <input type="submit" value="Wyloguj się" id="submitFilterButton"
                                formaction="{$conf->action_root}logout">
-                        {if $msgs->isMessage()}
-                            <div>
-                                <ul id="errorMsg">
-                                    {foreach $msgs->getMessages() as $msg}
-                                        {strip}
-                                            <li>{$msg->text}</li>
-                                        {/strip}
-                                    {/foreach}
-                                </ul>
-                            </div>
-                        {/if}
+                        {include file="Msg.tpl"}
                     </div>
                 </form>
             </div>

@@ -17,34 +17,35 @@ class EditCtrl
         $this->form = new DatabaseSearch();
     }
 
-    public function getParams()
-    {
-        $this->form->tableName = ParamUtils::getFromRequest('tableName');
-        $this->generateView();
-    }
-
     public function load_data()
     {
         $this->form->tableName = ParamUtils::getFromRequest('tableName');
         $where = "id_" . $this->form->tableName;
         $this->records = App::getDB()->select($this->form->tableName, "*", $where);
-        $this->generateView();
+        $this->generateTableView();
     }
 
     public function action_edit()
     {
-        $this->generateView();
+        $this->generateTableView();
         App::getSmarty()->display("TableContent.tpl");
     }
 
     public function action_showTable()
     {
         $this->load_data();
-        $this->generateView();
+        $this->generateTableView();
         App::getSmarty()->display("TableContentPart.tpl");
     }
 
-    public function generateView()
+    public function action_table()
+    {
+        $this->load_data();
+        $this->generateTableView();
+        App::getSmarty()->display("TableContentPart.tpl");
+    }
+
+    public function generateTableView()
     {
         App::getSmarty()->assign('form', $this->form);
         App::getSmarty()->assign('records', $this->records);
