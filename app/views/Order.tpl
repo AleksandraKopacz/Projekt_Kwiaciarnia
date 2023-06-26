@@ -8,7 +8,7 @@
                 <form action="{$conf->action_root}order" method="post">
                     <div class="form-outline mb-4">
                         <label for="login" class="form-label">E-mail</label>
-                        <input type="email" id="login" class="form-control user-control" name="login"
+                        <input type="email" id="login" readonly class="form-control-plaintext user-control" name="login"
                                value="{$form->email}"
                                disabled>
                     </div>

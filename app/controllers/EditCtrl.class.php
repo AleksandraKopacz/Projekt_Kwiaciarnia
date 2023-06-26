@@ -11,6 +11,7 @@ class EditCtrl
 {
     private $form;
     private $records;
+    private $tableCount;
 
     public function __construct()
     {
@@ -98,7 +99,8 @@ class EditCtrl
         $this->form->cena_uslugi = ParamUtils::getFromRequest('cena_uslugi');
         $this->form->typ = ParamUtils::getFromRequest('typ');
         $this->form->table = App::getDB()->get("uslugi", "*", ["usluga" => $this->form->usluga]);
-        if (empty($this->form->table)) {
+        $this->tableCount = App::getDB()->count("uslugi");
+        if (empty($this->form->table) && $this->tableCount < 10) {
             $this->form->table = App::getDB()->insert("uslugi", [
                 "img" => $this->form->img,
                 "usluga" => $this->form->usluga,
@@ -107,6 +109,8 @@ class EditCtrl
                 "typ" => $this->form->typ
             ]);
             Utils::addInfoMessage('Dodano do bazy danych');
+        } elseif ($this->tableCount >= 10) {
+            Utils::addErrorMessage('W bazie danych jest już za dużo usług, nie można dodać nowych');
         } else {
             Utils::addErrorMessage('Taki rekord już istnieje');
         }
@@ -162,13 +166,16 @@ class EditCtrl
         $this->form->haslo = ParamUtils::getFromRequest('haslo');
         $this->form->rola = ParamUtils::getFromRequest('rola');
         $this->form->table = App::getDB()->get("uzytkownik", "*", ["email" => $this->form->email]);
-        if (empty($this->form->table)) {
+        $this->tableCount = App::getDB()->count("uzytkownik");
+        if (empty($this->form->table) && $this->tableCount < 10) {
             $this->form->table = App::getDB()->insert("uzytkownik", [
                 "email" => $this->form->email,
                 "haslo" => $this->form->haslo,
                 "rola" => $this->form->rola
             ]);
             Utils::addInfoMessage('Dodano do bazy danych');
+        } elseif ($this->tableCount >=) {
+            Utils::addErrorMessage('W bazie danych jest już za dużo użytkowników, nie można dodać nowych');
         } else {
             Utils::addErrorMessage('Taki rekord już istnieje');
         }
@@ -223,12 +230,15 @@ class EditCtrl
         $this->form->szczegoly = ParamUtils::getFromRequest('szczegoly');
         $this->form->id_uzytkownik = ParamUtils::getFromRequest('id_uzytkownik');
         $this->form->table = App::getDB()->get("uzytkownik", "*", ["id_uzytkownik" => $this->form->id_uzytkownik]);
-        if (!empty($this->form->table)) {
+        $this->tableCount = App::getDB()->count("zamowienie");
+        if (!empty($this->form->table) && $this->tableCount < 10) {
             $this->form->table = App::getDB()->insert("zamowienie", [
                 "szczegoly" => $this->form->szczegoly,
                 "id_uzytkownik" => $this->form->id_uzytkownik
             ]);
             Utils::addInfoMessage('Dodano do bazy danych');
+        } elseif ($this->tableCount >= 10) {
+            Utils::addErrorMessage('W bazie danych jest już za dużo zamówień, nie można dodać nowych');
         } else {
             Utils::addErrorMessage('Użytkownik o takim id nie istnieje');
         }

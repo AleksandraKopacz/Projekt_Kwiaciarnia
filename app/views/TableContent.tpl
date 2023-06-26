@@ -8,14 +8,14 @@
                 <h1>Przejrzyj bazę danych</h1>
                 <form id="search-form"
                       onsubmit="ajaxPostForm('search-form','{$conf->action_root}table', 'tableContent'); return false;">
-                    <select name="tableName" value="tableName">
+                    <select class="user-control" name="tableName" value="tableName">
                         <option value="uslugi">Usługi</option>
                         <option value="uzytkownik">Użytkownik</option>
                         <option value="zamowienie">Zamówienie</option>
-                    </select><br />
-                    <label for="filter">Filtruj</label>
-                    <input type="text" name="filter" value="{$form->filter}" />
-                    <br/><input type="submit" value="Pokaż tabelę" id="submitFilterButton">
+                    </select>
+                    <label for="filter">&#x1F50E;&#xFE0E;</label>
+                    <input class="user-control" type="text" name="filter" id="filter" value="{$form->filter}" />
+                    <input type="submit" value="Pokaż tabelę" id="submitFilterButton">
                 </form>
                 <div id="tableContent">
                     {include file="TableContentPart.tpl"}
