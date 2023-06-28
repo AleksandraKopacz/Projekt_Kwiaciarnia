@@ -1,5 +1,6 @@
 <?php
-$conf->debug = true; # set true during development and use in your code (for instance check if true to send additional message)
+error_reporting(E_ERROR | E_PARSE);
+$conf->debug = false; # set true during development and use in your code (for instance check if true to send additional message)
 
 # ---- Webapp location
 $conf->server_name = 'localhost';   # server address and port

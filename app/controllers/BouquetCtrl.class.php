@@ -35,6 +35,7 @@ class BouquetCtrl
 
         if (!empty($this->form->to)) {
             $search_params['cena_uslugi[<=]'] = $this->form->to;
+            $this->max = 30;
         }
 
         if (isset($this->form->type)) {
