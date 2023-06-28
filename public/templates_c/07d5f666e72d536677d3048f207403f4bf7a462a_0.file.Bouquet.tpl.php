@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 4.3.0, created on 2023-06-26 16:55:39
+/* Smarty version 4.3.0, created on 2023-06-28 20:54:26
   from 'C:\xampp\htdocs\Kwiaciarnia\app\views\Bouquet.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '4.3.0',
-  'unifunc' => 'content_6499a6eb370888_45233514',
+  'unifunc' => 'content_649c81e20fd4c4_05283632',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '07d5f666e72d536677d3048f207403f4bf7a462a' => 
     array (
       0 => 'C:\\xampp\\htdocs\\Kwiaciarnia\\app\\views\\Bouquet.tpl',
-      1 => 1687791336,
+      1 => 1687978462,
       2 => 'file',
     ),
   ),
@@ -20,23 +20,23 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_6499a6eb370888_45233514 (Smarty_Internal_Template $_smarty_tpl) {
+function content_649c81e20fd4c4_05283632 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_loadInheritance();
 $_smarty_tpl->inheritance->init($_smarty_tpl, true);
 ?>
 
 
 <?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_3796092286499a6eb35df12_11746530', 'content');
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_1470518290649c81e20e22a4_83754838', 'content');
 $_smarty_tpl->inheritance->endChild($_smarty_tpl, "main.html");
 }
 /* {block 'content'} */
-class Block_3796092286499a6eb35df12_11746530 extends Smarty_Internal_Block
+class Block_1470518290649c81e20e22a4_83754838 extends Smarty_Internal_Block
 {
 public $subBlocks = array (
   'content' => 
   array (
-    0 => 'Block_3796092286499a6eb35df12_11746530',
+    0 => 'Block_1470518290649c81e20e22a4_83754838',
   ),
 );
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
@@ -98,6 +98,21 @@ $_smarty_tpl->tpl_vars['u']->do_else = false;
 $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
         </div>
     </div>
+    <nav aria-label="Page navigation">
+        <ul class="pagination justify-content-center">
+            <?php
+$_smarty_tpl->tpl_vars['page'] = new Smarty_Variable(null, $_smarty_tpl->isRenderingCache);$_smarty_tpl->tpl_vars['page']->step = 1;$_smarty_tpl->tpl_vars['page']->total = (int) ceil(($_smarty_tpl->tpl_vars['page']->step > 0 ? $_smarty_tpl->tpl_vars['maxPages']->value+1 - ("1") : "1"-($_smarty_tpl->tpl_vars['maxPages']->value)+1)/abs($_smarty_tpl->tpl_vars['page']->step));
+if ($_smarty_tpl->tpl_vars['page']->total > 0) {
+for ($_smarty_tpl->tpl_vars['page']->value = "1", $_smarty_tpl->tpl_vars['page']->iteration = 1;$_smarty_tpl->tpl_vars['page']->iteration <= $_smarty_tpl->tpl_vars['page']->total;$_smarty_tpl->tpl_vars['page']->value += $_smarty_tpl->tpl_vars['page']->step, $_smarty_tpl->tpl_vars['page']->iteration++) {
+$_smarty_tpl->tpl_vars['page']->first = $_smarty_tpl->tpl_vars['page']->iteration === 1;$_smarty_tpl->tpl_vars['page']->last = $_smarty_tpl->tpl_vars['page']->iteration === $_smarty_tpl->tpl_vars['page']->total;?>
+                <li class="page-item"><a style="border-color: #E0C2F2;" id="flinks" class="page-link" href="<?php echo call_user_func_array( $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['url'][0], array( array('action'=>"bouquet",'p'=>((string)($_smarty_tpl->tpl_vars['page']->value-1))),$_smarty_tpl ) );?>
+"><?php echo $_smarty_tpl->tpl_vars['page']->value;?>
+</a></li>
+            <?php }
+}
+?>
+        </ul>
+    </nav>
 <?php
 }
 }

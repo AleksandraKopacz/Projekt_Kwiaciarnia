@@ -41,4 +41,11 @@
             {/foreach}
         </div>
     </div>
+    <nav aria-label="Page navigation">
+        <ul class="pagination justify-content-center">
+            {for $page="1" to $maxPages}
+                <li class="page-item"><a style="border-color: #E0C2F2;" id="flinks" class="page-link" href="{url action="bouquet" p="{$page-1}"}">{$page}</a></li>
+            {/for}
+        </ul>
+    </nav>
 {/block}

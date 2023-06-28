@@ -14,14 +14,21 @@ class BouquetCtrl
     public $minPrice;
     public $form;
     public $page;
+    public $offset;
+    public $max;
+    public $maxPages;
 
     public function __construct()
     {
         $this->form = new FlowersSearch();
+        $this->page = 1;
+        $this->offset = 0;
+        $this->max = 4;
     }
 
     public function action_bouquet()
     {
+        $this->getPages();
         $this->getParams();
 
         $search_params = [];
@@ -40,8 +47,11 @@ class BouquetCtrl
         } else {
             $where = &$search_params;
         }
+        $this->getCurrentPage();
+        $this->offset = $this->max * $this->page;
 
         $where ["ORDER"] = "cena_uslugi";
+        $where ["LIMIT"] = [$this->offset, $this->max];
 
         $this->records = App::getDB()->select("uslugi", [
             "img",
@@ -70,11 +80,24 @@ class BouquetCtrl
 
     public function generateView()
     {
+        App::getSmarty()->assign('maxPages', $this->maxPages);
+        App::getSmarty()->assign('page', $this->page);
         App::getSmarty()->assign('minPrice', $this->minPrice);
         App::getSmarty()->assign('maxPrice', $this->maxPrice);
         App::getSmarty()->assign('types', $this->types);
         App::getSmarty()->assign('usluga', $this->records);
         App::getSmarty()->assign("page_title", "Pełna oferta bukietów");
         App::getSmarty()->display("Bouquet.tpl");
+    }
+
+    public function getPages()
+    {
+        $this->records = App::getDB()->count("uslugi", "*");
+        $this->maxPages = $this->records/$this->max;
+    }
+
+    public function getCurrentPage()
+    {
+        $this->page = ParamUtils::getFromCleanURL(1, true, "Coś poszło nie tak");
     }
 }
